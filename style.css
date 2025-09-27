@@ -715,3 +715,165 @@ p {
 	}
 }
 /* End  Media Query For Desktop */
+
+/* --- Style Tambahan untuk Portofolio Hibrida --- */
+
+/* Ganti ID #services menjadi #skills */
+#skills .services {
+	flex-direction: column;
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#skills .service-top {
+	max-width: 500px;
+	margin: 0 auto;
+}
+#skills .service-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+#skills .service-item {
+	flex-basis: 80%;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	border-radius: 10px;
+	background-image: url(./img/img-1.png);
+	background-size: cover;
+	margin: 10px 5%;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+#skills .service-item::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: 0.9;
+	z-index: -1;
+}
+#skills .service-bottom .icon {
+	height: 80px;
+	width: 80px;
+	margin-bottom: 20px;
+}
+#skills .service-bottom .icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+#skills .service-item h2 {
+	font-size: 2rem;
+	color: white;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+#skills .service-item p {
+	color: white;
+	text-align: left;
+}
+
+/* Style untuk Sub-Judul di Section Projects */
+.subsection-title {
+	font-size: 2.8rem;
+	font-weight: 500;
+	color: black;
+	margin-bottom: 40px;
+	margin-top: 60px;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	text-align: center;
+}
+#projects .all-projects:first-of-type .subsection-title {
+    margin-top: 0;
+}
+
+
+/* --- Dropdown Menu Styles --- */
+
+/* Style untuk item dropdown di navigasi */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #333;
+	min-width: 220px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	border-radius: 5px;
+    list-style: none; /* Menghilangkan bullet points */
+}
+
+.dropdown-content a {
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	font-size: 1.6rem;
+	text-align: left;
+}
+.dropdown-content a::after {
+    display: none; /* Menghilangkan efek ::after dari sub-menu */
+}
+
+.dropdown-content li:hover a {
+	background-color: rgb(73, 146, 255);
+}
+
+/* Tampilkan dropdown saat di-hover */
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+
+/* Penyesuaian Dropdown untuk Tampilan Mobile */
+@media only screen and (max-width: 1199px) {
+	/* Sembunyikan dropdown default di mobile */
+	.dropdown-content {
+		display: none !important; 
+	}
+	.dropdown > a {
+		pointer-events: none; /* Menonaktifkan link utama dropdown */
+	}
+
+	/* Buat sub-menu tampil inline di menu hamburger */
+	#header .nav-list ul.active .dropdown-content {
+		display: block !important;
+		position: static;
+		background-color: transparent;
+		box-shadow: none;
+		min-width: unset;
+		padding-left: 30px; /* Indentasi sub-menu */
+	}
+
+	#header .nav-list ul.active .dropdown-content a {
+		font-size: 2rem; /* Ukuran font lebih kecil untuk sub-menu */
+		padding: 10px 20px;
+	}
+}
+
+/* Penyesuaian untuk Desktop */
+@media only screen and (min-width: 1200px) {
+    #header .nav-list ul li.dropdown > a {
+        font-size: 1.8rem;
+    }
+    #skills .service-bottom .service-item {
+        flex-basis: 45%;
+        margin: 2.5%;
+    }
+}
