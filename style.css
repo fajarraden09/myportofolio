@@ -30,3 +30,22 @@ section {
         margin-top: 0; /* Menghilangkan jarak aneh saat muncul */
     }
 }
+
+/* -- Style untuk Ikon Keterampilan -- */
+
+.skill-icons {
+    font-size: 4rem; /* Ukuran ikon */
+    display: flex;
+    gap: 2rem; /* Jarak antar ikon */
+    justify-content: center; /* Posisi di tengah card */
+    margin-bottom: 1rem;
+}
+
+/* Warna-warna brand ikon (opsional tapi disarankan) */
+.skill-icons .fa-php { color: #777BB4; }
+.skill-icons .fa-laravel { color: #FF2D20; }
+.skill-icons .fa-vuejs { color: #4FC08D; }
+.skill-icons .fa-figma { color: #F24E1E; }
+.skill-icons .fa-file-word { color: #2B579A; }
+.skill-icons .fa-file-excel { color: #217346; }
+.skill-icons .fa-file-powerpoint { color: #D24726; }
