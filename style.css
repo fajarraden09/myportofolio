@@ -7,7 +7,8 @@ body {
 
 #hero {
     background-color: #f8f9fa;
-    padding: 5rem 0;
+    padding: 8rem 0; /* Menggunakan padding untuk jarak atas-bawah yang pas */
+    text-align: center;
 }
 
 /* 2. Membuat Judul dan Subjudul Hero Lebih Rapi */
@@ -55,6 +56,14 @@ h2.text-center.mb-5 {
 }
 #projects .card-title {
     font-size: 1.8rem;
+}
+
+#about .about-image img {
+    max-width: 350px; /* Batasi lebar maksimum foto */
+    width: 100%;      /* Pastikan tetap responsif jika layar kecil */
+    display: block;   /* Mencegah spasi kosong di bawah gambar */
+    margin: 0 auto;   /* Posisikan gambar di tengah kolomnya */
+    border-radius: 8px;
 }
 
 /* 7. Penyesuaian untuk Tampilan Mobile agar Lebih Rapi */
