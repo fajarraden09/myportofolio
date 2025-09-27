@@ -7,33 +7,31 @@ body {
 
 #hero {
     background-color: #f8f9fa;
-    padding: 8rem 0; /* Menggunakan padding untuk jarak atas-bawah yang pas */
+    padding: 6rem 0; /* Jarak atas-bawah dikurangi */
     text-align: center;
 }
 
 /* 2. Membuat Judul dan Subjudul Hero Lebih Rapi */
 #hero h1 {
-    font-size: 4.5rem; /* Sedikit mengecilkan judul utama */
+    font-size: 4rem; /* Sedikit mengecilkan judul utama */
 }
 #hero p.lead {
     font-size: 1.8rem; /* Menyesuaikan ukuran subjudul */
-    margin-bottom: 2rem; /* Menambah jarak ke tombol */
+    margin-bottom: 2.5rem; /* Menambah jarak ke tombol */
 }
 
 .profile-picture {
     width: 180px;  /* Ukuran ideal untuk desktop */
     height: 180px; /* Ukuran ideal untuk desktop */
-    border-width: 6px; /* Membuat border sedikit lebih tebal */
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid white;
+    border: 6px solid white;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 section {
     scroll-margin-top: 56px;
-	padding-top: 8rem; /* Menambah jarak di atas setiap judul section */
-    padding-bottom: 8rem; /* Menambah jarak di bawah setiap section */
+	padding: 8rem 0;
 }
 
 /* 4. Menyesuaikan Ukuran Judul Section */
@@ -58,12 +56,9 @@ h2.text-center.mb-5 {
     font-size: 1.8rem;
 }
 
-#about .about-image img {
-    max-width: 350px; /* Batasi lebar maksimum foto */
-    width: 100%;      /* Pastikan tetap responsif jika layar kecil */
-    display: block;   /* Mencegah spasi kosong di bawah gambar */
-    margin: 0 auto;   /* Posisikan gambar di tengah kolomnya */
-    border-radius: 8px;
+#about .img-fluid {
+    max-width: 350px !important; /* Memaksa lebar maksimum foto */
+    height: auto !important;
 }
 
 /* 7. Penyesuaian untuk Tampilan Mobile agar Lebih Rapi */
@@ -72,12 +67,17 @@ h2.text-center.mb-5 {
         width: 140px;
         height: 140px;
     }
+	#hero {
+        padding: 5rem 0;
+    }
     #hero h1 {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
     }
     section {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding: 6rem 0;
+    }
+	#about .img-fluid {
+        max-width: 280px !important;
     }
 }
 
