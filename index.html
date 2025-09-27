@@ -11,178 +11,127 @@
     <div class="container">
       <div class="nav-bar">
         <div class="brand">
-          <a href="#hero">
-            <h1><span>NAMA</span> <span>ANDA</span></h1>
-          </a>
+          <a href="#hero"><h1><span>NAMA</span> <span>ANDA</span></h1></a>
         </div>
         <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
+          <div class="hamburger"><div class="bar"></div></div>
           <ul>
-            <li><a href="#hero" data-after="Home">Beranda</a></li>
-            <li><a href="#about" data-after="About">Tentang Saya</a></li>
+            <li><a href="#hero">Beranda</a></li>
+            <li><a href="#about">Tentang Saya</a></li>
             <li class="dropdown">
-              <a href="#projects" data-after="Projects">Portofolio ▼</a>
+              <a href="#projects">Portofolio ▼</a>
               <ul class="dropdown-content">
                 <li><a href="#projects-web">Proyek Web Dev</a></li>
                 <li><a href="#projects-admin">Pengalaman Admin</a></li>
               </ul>
             </li>
-            <li><a href="#skills" data-after="Skills">Keterampilan</a></li>
-            <li><a href="#contact" data-after="Contact">Kontak</a></li>
+            <li><a href="#skills">Keterampilan</a></li>
+            <li><a href="#contact">Kontak</a></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="profile-picture">
-          <img src="./img/fotoku.png" alt="Foto Profil Anda">
-        </div>
-        <div class="hero-text">
-          <h1>[NAMA LENGKAP ANDA]</h1>
-          <h2>Web Developer & Spesialis Administrasi</h2>
-          <p>Selamat datang di portofolio saya. Saya bersemangat dalam menciptakan solusi digital yang efisien dan fungsional yang menjembatani kebutuhan teknis dan proses bisnis.</p>
-          <a href="#projects" type="button" class="cta">Lihat Proyek Saya</a>
+  <main>
+    <section id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="profile-picture">
+            <img src="./img/fotoku.png" alt="Foto Profil Anda">
+          </div>
+          <div class="hero-text">
+            <h1>[NAMA LENGKAP ANDA]</h1>
+            <h2>Web Developer & Spesialis Administrasi</h2>
+            <p>Selamat datang di portofolio saya. Saya bersemangat dalam menciptakan solusi digital yang efisien dan fungsional.</p>
+            <a href="#projects" class="cta">Lihat Proyek Saya</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about">
-    <div class="container">
-        <div class="col-left">
-            <div class="about-img">
-            <img src="./img/fotoku.png" alt="img">
-            </div>
-        </div>
-        <div class="col-right">
-            <h1 class="section-title">Tentang <span>Saya</span></h1>
-            <h2>Menjembatani Teknologi dan Proses Bisnis</h2>
-            <p>Saya adalah seorang pengembang web yang bersemangat dalam membangun solusi digital yang fungsional. Didukung oleh latar belakang di bidang administrasi, saya memiliki kemampuan unik untuk memahami kebutuhan operasional bisnis dan menerjemahkannya menjadi solusi teknis yang efisien dan terstruktur. Ketelitian dan kemampuan organisasi dari dunia administrasi menjadikan saya seorang developer yang lebih baik.</p>
-        </div>
-    </div>
-  </section>
+    <section id="about">
+      <div class="container">
+          <div class="col-left">
+              <div class="about-img">
+                <img src="./img/fotoku.png" alt="img">
+              </div>
+          </div>
+          <div class="col-right">
+              <h1 class="section-title">Tentang <span>Saya</span></h1>
+              <h2>Menjembatani Teknologi dan Proses Bisnis</h2>
+              <p>Saya adalah seorang pengembang web yang didukung oleh latar belakang di bidang administrasi. Saya memiliki kemampuan unik untuk memahami kebutuhan operasional bisnis dan menerjemahkannya menjadi solusi teknis yang efisien dan terstruktur.</p>
+          </div>
+      </div>
+    </section>
 
-  <section id="skills">
-    <div class="container">
-      <div class="service-top">
+    <section id="skills">
+      <div class="container">
         <h1 class="section-title">Keter<span>am</span>pilan</h1>
-        <p>Kombinasi keahlian teknis dalam pengembangan web dan keahlian dalam manajemen administrasi memungkinkan saya untuk memberikan kontribusi yang komprehensif.</p>
-      </div>
-      <div class="service-bottom">
-        <div class="service-item">
-          <div class="icon"><img src="https://img.icons8.com/color/48/000000/code.png" /></div>
-          <h2>Keterampilan Teknis (Web Development)</h2>
-          <p><b>Bahasa:</b> PHP, JavaScript, HTML5, CSS3, Java<br><b>Framework:</b> Laravel, CodeIgniter, Vue.js<br><b>Database:</b> MySQL, PostgreSQL<br><b>Tools:</b> Git, Docker, Figma, VS Code</p>
+        <div class="skills-container">
+          <div class="skill-item">
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/code.png" /></div>
+            <h2>Teknis (Web Development)</h2>
+            <p><b>Bahasa:</b> PHP, JavaScript, HTML, CSS, Java<br><b>Framework:</b> Laravel, Vue.js, CodeIgniter<br><b>Tools:</b> Git, Docker, Figma, VS Code</p>
+          </div>
+          <div class="skill-item">
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png" /></div>
+            <h2>Administrasi</h2>
+            <p><b>Software:</b> Microsoft Office Suite (Advanced Excel)<br><b>Manajemen:</b> Manajemen Data, Penjadwalan<br><b>Proses:</b> Otomatisasi, Pengarsipan Digital</p>
+          </div>
         </div>
-        <div class="service-item">
-          <div class="icon"><img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png" /></div>
-          <h2>Keterampilan Administrasi</h2>
-          <p><b>Software:</b> Microsoft Office Suite (Advanced Excel, Word, PowerPoint)<br><b>Manajemen:</b> Manajemen Data, Penjadwalan, Manajemen Proyek<br><b>Proses:</b> Otomatisasi Proses, Pengarsipan Digital</p>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <div class="container">
-      <div class="projects-header">
+    <section id="projects">
+      <div class="container">
         <h1 class="section-title">Port<span>ofolio</span></h1>
-      </div>
-      <div id="projects-web">
-        <h2 class="subsection-title">Proyek Web Development</h2>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Project 1</h1>
-            <h2>Website Sekolah</h2>
-            <p>Sebuah platform online yang menyajikan informasi lengkap tentang sekolah, mulai dari profil, kegiatan, hingga pengumuman. Dibangun menggunakan Laravel dan MySQL.</p>
-          </div>
-          <div class="project-img">
-            <img src="./img/sekolah.png" alt="img">
+        <div id="projects-web">
+          <h2 class="subsection-title">Proyek Web Development</h2>
+          <div class="project-item">
+            <div class="project-img"><img src="./img/sekolah.png" alt="img"></div>
+            <div class="project-info">
+              <h3>Project 1: Website Sekolah</h3>
+              <p>Platform online untuk informasi sekolah, mulai dari profil, kegiatan, hingga pengumuman. Dibangun menggunakan Laravel.</p>
+            </div>
           </div>
         </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Project 2</h1>
-            <h2>Website Rental</h2>
-            <p>Platform online yang memungkinkan pengguna menyewa berbagai jenis barang atau properti. Dilengkapi sistem booking dan manajemen inventaris.</p>
-          </div>
-          <div class="project-img">
-            <img src="./img/rental.png" alt="img">
+        <div id="projects-admin">
+          <h2 class="subsection-title">Pengalaman Administrasi (Studi Kasus)</h2>
+          <div class="project-item">
+            <div class="project-img"><img src="./img/admin.png" alt="img"></div>
+            <div class="project-info">
+              <h3>Studi Kasus 1: Otomatisasi Laporan</h3>
+              <p>Merancang script macro VBA di Excel untuk memproses data otomatis, mengurangi waktu kerja dari 8 jam menjadi 15 menit.</p>
+            </div>
           </div>
         </div>
       </div>
-      <div id="projects-admin">
-        <h2 class="subsection-title">Pengalaman & Proyek Administrasi (Studi Kasus)</h2>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Studi Kasus 1</h1>
-            <h2>Otomatisasi Laporan Bulanan</h2>
-            <p><b>Masalah:</b> Proses rekapitulasi data penjualan manual memakan waktu 8 jam setiap bulan.<br><b>Tindakan:</b> Merancang dan membuat macro VBA di Excel untuk menarik, memproses, dan memformat data secara otomatis.<br><b>Hasil:</b> Mengurangi waktu kerja menjadi 15 menit dan menghilangkan human error.</p>
-          </div>
-          <div class="project-img">
-            <img src="./img/admin.png" alt="img">
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Studi Kasus 2</h1>
-            <h2>Implementasi Sistem Arsip Digital</h2>
-            <p><b>Masalah:</b> Pencarian dokumen fisik HR sulit dan tidak efisien.<br><b>Tindakan:</b> Memimpin proyek digitalisasi dan kategorisasi dokumen ke Google Drive dengan standarisasi penamaan file.<br><b>Hasil:</b> Waktu pencarian dokumen berkurang dari 15 menit menjadi di bawah 30 detik.</p>
-          </div>
-          <div class="project-img">
-            <img src="./img/organisasi.png" alt="img">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="container">
-      <div>
-        <h1 class="section-title">Kontak <span>info</span></h1>
-      </div>
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
-          <div class="contact-info">
-            <h1>No Telp</h1>
-            <h2>+62 [Nomor Anda]</h2>
+    <section id="contact">
+        <div class="container">
+          <h1 class="section-title">Kontak <span>Info</span></h1>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+              <h2>+62 [Nomor Anda]</h2>
+            </div>
+            <div class="contact-item">
+              <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+              <h2>[Email Anda]</h2>
+            </div>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
-          <div class="contact-info">
-            <h1>Email</h1>
-            <h2>[Email Anda]</h2>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
-          <div class="contact-info">
-            <h1>Alamat</h1>
-            <h2>[Kota Anda], Yogyakarta</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <section id="footer">
+  <footer id="footer">
     <div class="container">
-      <div class="brand">
-        <h1><span>NAMA</span> <span>ANDA</span></h1>
-      </div>
-      <h2>Solusi Digital dan Administratif Anda</h2>
-      <p>Copyright © 2024 [Nama Anda]. All rights reserved</p>
+      <div class="brand"><h1><span>NAMA</span> <span>ANDA</span></h1></div>
+      <p>Copyright © 2024. All rights reserved</p>
     </div>
-  </section>
+  </footer>
 
   <script src="./app.js"></script>
 </body>
