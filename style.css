@@ -7,7 +7,7 @@ body {
 
 #hero {
     background-color: #f8f9fa;
-    padding: 6rem 0; /* Jarak atas-bawah dikurangi */
+    padding: 4rem 0; /* Jarak atas-bawah dikurangi */
     text-align: center;
 }
 
@@ -58,7 +58,9 @@ h2.text-center.mb-5 {
 
 #about .img-fluid {
     max-width: 350px !important; /* Memaksa lebar maksimum foto */
-    height: auto !important;
+    height: auto !important;     /* Menjaga rasio aspek gambar */
+    display: block;
+    margin: 0 auto; /* Memposisikan gambar di tengah kolomnya */
 }
 
 /* 7. Penyesuaian untuk Tampilan Mobile agar Lebih Rapi */
