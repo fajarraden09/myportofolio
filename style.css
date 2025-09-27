@@ -22,3 +22,11 @@ body {
 section {
     scroll-margin-top: 56px;
 }
+
+/* Fitur Dropdown On-Hover untuk Desktop */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0; /* Menghilangkan jarak aneh saat muncul */
+    }
+}
