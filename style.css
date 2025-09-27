@@ -7,7 +7,7 @@ body {
 
 #hero {
     background-color: #f8f9fa;
-    padding: 4rem 0; /* Jarak atas-bawah dikurangi */
+    padding: 2rem 0; /* Jarak atas-bawah dikurangi */
     text-align: center;
 }
 
@@ -31,7 +31,7 @@ body {
 
 section {
     scroll-margin-top: 56px;
-	padding: 8rem 0;
+	padding: 6rem 0;
 }
 
 /* 4. Menyesuaikan Ukuran Judul Section */
@@ -56,11 +56,11 @@ h2.text-center.mb-5 {
     font-size: 1.8rem;
 }
 
-#about .img-fluid {
-    max-width: 350px !important; /* Memaksa lebar maksimum foto */
-    height: auto !important;     /* Menjaga rasio aspek gambar */
-    display: block;
-    margin: 0 auto; /* Memposisikan gambar di tengah kolomnya */
+/* Memperbaiki ukuran foto di bagian 'Tentang Saya' */
+#about .col-md-4 img.img-fluid {
+    max-width: 300px; /* Atur lebar maksimal foto */
+    width: 100%; /* Pastikan tetap responsif */
+    margin: 0 auto; /* Posisikan di tengah kolom */
 }
 
 /* 7. Penyesuaian untuk Tampilan Mobile agar Lebih Rapi */
