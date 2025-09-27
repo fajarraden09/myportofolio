@@ -89,7 +89,8 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    /* KUNCI PERBAIKAN: Ubah 'top' agar sedikit tumpang tindih */
+    top: 55px;
     left: 0;
     background-color: #343a40;
     min-width: 180px;
