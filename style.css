@@ -1,4 +1,4 @@
-/* === CSS BERSIH & FINAL UNTUK SELURUH HALAMAN === */
+/* === CSS FINAL (v2) - HEADER LEBIH RAMPING === */
 
 /* 1. Impor Font & Reset Global */
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap';
@@ -80,13 +80,17 @@ p {
 #header .nav-list ul {
 	list-style: none;
 	display: flex;
+	align-items: center; /* PENTING: Untuk vertical centering */
+    height: 70px; /* Pastikan list setinggi header */
 }
 
 #header .nav-list ul li a {
 	color: var(--light-text);
-	font-size: 1.7rem;
-	padding: 20px 15px;
-	display: block;
+	font-size: 1.6rem; /* Sedikit dikecilkan */
+	padding: 0 15px; /* KUNCI: Padding vertikal dihapus */
+	display: flex;
+    align-items: center;
+    height: 100%;
 	transition: color 0.3s ease;
 }
 
@@ -97,6 +101,7 @@ p {
 /* Dropdown Menu */
 .dropdown {
 	position: relative;
+    height: 100%;
 }
 .dropdown-content {
 	display: none;
@@ -104,7 +109,7 @@ p {
 	left: 0;
 	top: 100%;
 	background-color: #3e4a58;
-	min-width: max-content; /* Otomatis menyesuaikan lebar */
+	min-width: max-content;
 	list-style: none;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 	border-radius: 0 0 5px 5px;
@@ -114,6 +119,7 @@ p {
 	display: block;
 }
 .dropdown-content a {
+    height: auto; /* Reset height untuk item dropdown */
     color: var(--light-text);
 	padding: 12px 20px;
 	font-size: 1.5rem;
@@ -132,7 +138,7 @@ p {
 
 /* 3. Hero Section */
 #hero {
-	min-height: calc(100vh - 70px); /* Tinggi layar dikurangi tinggi header */
+	min-height: calc(100vh - 70px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
