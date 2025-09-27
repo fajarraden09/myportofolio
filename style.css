@@ -24,9 +24,7 @@ html {
 }
 
 body {
-	background-color: white;
-	color: var(--dark-text);
-    padding-top: 70px; /* Mencegah konten tertutup oleh header */
+    padding-top: 65px; /* Sesuaikan dengan height header baru */
 }
 
 a {
@@ -51,12 +49,13 @@ p {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 70px;
+	height: 65px; /* KUNCI: Header dibuat lebih ramping */
 	background-color: var(--dark-bg);
-	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 	z-index: 1000;
 	display: flex;
 	align-items: center;
+	transition: background-color 0.3s ease;
 }
 
 #header .container {
@@ -69,7 +68,7 @@ p {
 }
 
 #header .brand h1 {
-	font-size: 2.5rem;
+	font-size: 2.2rem; /* Font brand sedikit dikecilkan */
 	color: white;
 	text-transform: uppercase;
 }
@@ -80,22 +79,25 @@ p {
 #header .nav-list ul {
 	list-style: none;
 	display: flex;
-	align-items: center; /* PENTING: Untuk vertical centering */
-    height: 70px; /* Pastikan list setinggi header */
+	align-items: center;
+	height: 65px;
 }
 
 #header .nav-list ul li a {
-	color: var(--light-text);
-	font-size: 1.6rem; /* Sedikit dikecilkan */
-	padding: 0 15px; /* KUNCI: Padding vertikal dihapus */
+	color: #e0e0e0; /* Warna dibuat sedikit lebih lembut */
+	font-size: 1.5rem; /* Font menu dikecilkan agar rapi */
+	font-weight: 400;
+	padding: 0 16px; /* Hanya padding horizontal */
 	display: flex;
     align-items: center;
     height: 100%;
 	transition: color 0.3s ease;
+	border-bottom: 2px solid transparent; /* Garis bawah transparan untuk efek hover */
 }
 
 #header .nav-list ul li a:hover {
-	color: var(--primary-color);
+	color: white;
+	border-bottom-color: var(--primary-color); /* Garis bawah muncul saat hover */
 }
 
 /* Dropdown Menu */
@@ -107,23 +109,25 @@ p {
 	display: none;
 	position: absolute;
 	left: 0;
-	top: 100%;
+	top: 95%; /* Posisi dropdown sedikit di atas */
 	background-color: #3e4a58;
 	min-width: max-content;
 	list-style: none;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-	border-radius: 0 0 5px 5px;
+	border-radius: 5px;
 	z-index: 1001;
+	overflow: hidden; /* Agar border-radius bekerja */
 }
 .dropdown:hover .dropdown-content {
 	display: block;
 }
 .dropdown-content a {
-    height: auto; /* Reset height untuk item dropdown */
+    height: auto;
     color: var(--light-text);
 	padding: 12px 20px;
 	font-size: 1.5rem;
     white-space: nowrap;
+	border-bottom: none !important; /* Hapus efek hover garis bawah di dropdown */
 }
 .dropdown-content a:hover {
 	background-color: var(--primary-color);
