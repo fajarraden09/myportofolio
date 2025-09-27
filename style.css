@@ -58,9 +58,12 @@ h2.text-center.mb-5 {
 
 /* Memperbaiki ukuran foto di bagian 'Tentang Saya' */
 #about .col-md-4 img.img-fluid {
-    max-width: 200px; /* Atur lebar maksimal foto */
+    max-width: 230px; /* Atur lebar maksimal foto */
     width: 100%; /* Pastikan tetap responsif */
     margin: 0 auto; /* Posisikan di tengah kolom */
+}
+#about p.text-muted {
+    text-align: justify;
 }
 
 /* 7. Penyesuaian untuk Tampilan Mobile agar Lebih Rapi */
