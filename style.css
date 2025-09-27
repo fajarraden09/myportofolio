@@ -1,6 +1,5 @@
-/* === CSS FINAL (v2) - HEADER LEBIH RAMPING === */
+/* === CSS FINAL & SINKRON === */
 
-/* 1. Impor Font & Reset Global */
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap';
 
 :root {
@@ -24,7 +23,7 @@ html {
 }
 
 body {
-    padding-top: 65px; /* Sesuaikan dengan height header baru */
+    padding-top: 65px;
 }
 
 a {
@@ -43,64 +42,59 @@ p {
 	font-weight: 300;
 }
 
-/* 2. Header & Navigasi */
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Header & Navigasi */
 #header {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 65px; /* KUNCI: Header dibuat lebih ramping */
+	height: 65px;
 	background-color: var(--dark-bg);
 	box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 	z-index: 1000;
 	display: flex;
 	align-items: center;
-	transition: background-color 0.3s ease;
 }
-
-#header .container {
-	width: 90%;
-	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+#header .nav-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-
 #header .brand h1 {
-	font-size: 2.2rem; /* Font brand sedikit dikecilkan */
+	font-size: 2.2rem;
 	color: white;
-	text-transform: uppercase;
 }
 #header .brand h1 span {
 	color: var(--primary-color);
 }
-
 #header .nav-list ul {
 	list-style: none;
 	display: flex;
 	align-items: center;
 	height: 65px;
 }
-
 #header .nav-list ul li a {
-	color: #e0e0e0; /* Warna dibuat sedikit lebih lembut */
-	font-size: 1.5rem; /* Font menu dikecilkan agar rapi */
+	color: #e0e0e0;
+	font-size: 1.5rem;
 	font-weight: 400;
-	padding: 0 16px; /* Hanya padding horizontal */
+	padding: 0 16px;
 	display: flex;
     align-items: center;
     height: 100%;
 	transition: color 0.3s ease;
-	border-bottom: 2px solid transparent; /* Garis bawah transparan untuk efek hover */
+	border-bottom: 2px solid transparent;
 }
-
 #header .nav-list ul li a:hover {
 	color: white;
-	border-bottom-color: var(--primary-color); /* Garis bawah muncul saat hover */
+	border-bottom-color: var(--primary-color);
 }
-
-/* Dropdown Menu */
 .dropdown {
 	position: relative;
     height: 100%;
@@ -109,14 +103,14 @@ p {
 	display: none;
 	position: absolute;
 	left: 0;
-	top: 95%; /* Posisi dropdown sedikit di atas */
+	top: 95%;
 	background-color: #3e4a58;
 	min-width: max-content;
 	list-style: none;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 	border-radius: 5px;
 	z-index: 1001;
-	overflow: hidden; /* Agar border-radius bekerja */
+	overflow: hidden;
 }
 .dropdown:hover .dropdown-content {
 	display: block;
@@ -127,34 +121,27 @@ p {
 	padding: 12px 20px;
 	font-size: 1.5rem;
     white-space: nowrap;
-	border-bottom: none !important; /* Hapus efek hover garis bawah di dropdown */
+	border-bottom: none !important;
 }
 .dropdown-content a:hover {
 	background-color: var(--primary-color);
 	color: white;
 }
+#header .hamburger { display: none; }
 
-/* Hamburger Menu (Mobile) */
-#header .hamburger {
-	display: none;
-}
-
-
-/* 3. Hero Section */
+/* Hero Section */
 #hero {
-	min-height: calc(100vh - 70px);
+	min-height: calc(100vh - 65px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: var(--light-gray);
 	text-align: center;
 }
-
 #hero .hero-content {
 	max-width: 800px;
 	padding: 20px;
 }
-
 #hero .profile-picture {
 	width: 180px;
 	height: 180px;
@@ -164,291 +151,77 @@ p {
 	border: 5px solid white;
 	box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
+#hero .hero-text h1 { font-size: 5rem; font-weight: 700; margin-bottom: 10px; color: var(--dark-text); }
+#hero .hero-text h2 { font-size: 2.2rem; font-weight: 400; color: #555; margin-bottom: 20px; }
+#hero .hero-text p { max-width: 600px; margin: 0 auto 30px auto; }
+.cta { display: inline-block; padding: 15px 35px; background-color: var(--primary-color); color: white; font-size: 1.8rem; border-radius: 5px; transition: background-color 0.3s ease; border: none; }
+.cta:hover { background-color: var(--dark-bg); color: white; }
 
-#hero .hero-text h1 {
-	font-size: 5rem;
-	font-weight: 700;
-	margin-bottom: 10px;
-	color: var(--dark-text);
-}
-#hero .hero-text h2 {
-	font-size: 2.2rem;
-	font-weight: 400;
-	color: #555;
-	margin-bottom: 20px;
-}
-#hero .hero-text p {
-	max-width: 600px;
-	margin: 0 auto 30px auto;
-}
-.cta {
-	display: inline-block;
-	padding: 15px 35px;
-	background-color: var(--primary-color);
-	color: white;
-	font-size: 1.8rem;
-	border-radius: 5px;
-	transition: background-color 0.3s ease;
-	border: none;
-}
-.cta:hover {
-	background-color: var(--dark-bg);
-	color: white;
-}
+/* Gaya Section Umum */
+section { padding: 100px 0; }
+.section-title { font-size: 4rem; font-weight: 700; text-align: center; margin-bottom: 60px; text-transform: uppercase; }
+.section-title span { color: var(--primary-color); }
+#about, #projects { background-color: white; }
+#skills, #contact { background-color: var(--light-gray); }
 
+/* About Section */
+#about .container { display: flex; align-items: center; gap: 50px; }
+#about .col-left { flex: 1; max-width: 350px; }
+#about .about-img { border-radius: 10px; overflow: hidden; }
+#about .col-right { flex: 2; text-align: left; }
+#about .col-right h2 { font-size: 2.5rem; margin-bottom: 15px; }
 
-/* 4. Gaya Section Umum */
-section {
-	padding: 100px 0;
-}
-.container {
-	width: 90%;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-.section-title {
-	font-size: 4rem;
-	font-weight: 700;
-	text-align: center;
-	margin-bottom: 60px;
-	text-transform: uppercase;
-}
-.section-title span {
-	color: var(--primary-color);
-}
-#about, #projects {
-	background-color: white;
-}
-#skills, #contact {
-	background-color: var(--light-gray);
-}
+/* Skills Section */
+#skills .service-bottom { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+#skills .service-item { flex-basis: 400px; background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; }
+#skills .service-item .icon { width: 60px; height: 60px; margin: 0 auto 20px auto; }
+#skills .service-item h2 { font-size: 2rem; margin-bottom: 10px; }
+#skills .service-item p { text-align: left; }
 
+/* Projects Section */
+#projects .subsection-title { font-size: 2.5rem; text-align: center; margin-bottom: 40px; font-weight: 500; }
+#projects .project-item { display: flex; gap: 30px; align-items: center; margin-bottom: 40px; background: var(--light-gray); border-radius: 10px; overflow: hidden; }
+#projects .project-item:nth-child(even) { flex-direction: row-reverse; }
+#projects .project-info { padding: 30px; flex: 1; }
+#projects .project-info h1 { font-size: 2.5rem; margin-bottom: 5px; }
+#projects .project-info h2 { font-size: 1.8rem; font-weight: 400; margin-bottom: 15px; }
+#projects .project-img { flex-basis: 50%; }
 
-/* 5. About Section */
-#about .container {
-	display: flex;
-	align-items: center;
-	gap: 50px;
-}
-#about .col-left {
-	flex: 1;
-	max-width: 350px;
-}
-#about .about-img {
-	border-radius: 10px;
-	overflow: hidden;
-}
-#about .col-right {
-	flex: 2;
-	text-align: left;
-}
-#about .col-right h2 {
-	font-size: 2.5rem;
-	margin-bottom: 15px;
-}
+/* Contact Section */
+#contact .contact-items { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+#contact .contact-item { background: white; padding: 30px; border-radius: 10px; text-align: center; flex-basis: 300px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+#contact .contact-item .icon { width: 70px; margin: 0 auto 15px auto; }
+#contact .contact-info h1 { font-size: 2rem; }
+#contact .contact-info h2 { font-size: 1.5rem; font-weight: 300; }
 
+/* Footer */
+#footer { background-color: var(--dark-bg); color: var(--light-text); text-align: center; padding: 40px 0; }
+#footer .brand h1 { font-size: 2.5rem; }
+#footer h2 { font-size: 1.6rem; font-weight: 300; margin: 10px 0; }
+#footer p { color: #aaa; font-size: 1.4rem; }
 
-/* 6. Skills Section */
-#skills .service-bottom {
-	display: flex;
-	justify-content: center;
-	gap: 30px;
-	flex-wrap: wrap;
-}
-#skills .service-item {
-	flex-basis: 400px;
-	background-color: white;
-	padding: 30px;
-	border-radius: 10px;
-	box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-	text-align: center;
-}
-#skills .service-item .icon {
-	width: 60px;
-	height: 60px;
-	margin: 0 auto 20px auto;
-}
-#skills .service-item h2 {
-	font-size: 2rem;
-	margin-bottom: 10px;
-}
-#skills .service-item p {
-	text-align: left;
-}
-
-
-/* 7. Projects Section */
-#projects .all-projects {
-	margin-bottom: 60px;
-}
-#projects .subsection-title {
-	font-size: 2.5rem;
-	text-align: center;
-	margin-bottom: 40px;
-	font-weight: 500;
-}
-#projects .project-item {
-	display: flex;
-	gap: 30px;
-	align-items: center;
-	margin-bottom: 40px;
-	background: var(--light-gray);
-	border-radius: 10px;
-	overflow: hidden;
-}
-#projects .project-item:nth-child(even) {
-	flex-direction: row-reverse;
-}
-#projects .project-info {
-	padding: 30px;
-	flex: 1;
-}
-#projects .project-info h1 {
-	font-size: 2.5rem;
-	margin-bottom: 5px;
-}
-#projects .project-info h2 {
-	font-size: 1.8rem;
-	font-weight: 400;
-	margin-bottom: 15px;
-}
-#projects .project-img {
-	flex-basis: 50%;
-}
-
-
-/* 8. Contact Section */
-#contact .contact-items {
-	display: flex;
-	justify-content: center;
-	gap: 30px;
-	flex-wrap: wrap;
-}
-#contact .contact-item {
-	background: white;
-	padding: 30px;
-	border-radius: 10px;
-	text-align: center;
-	flex-basis: 300px;
-	box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-#contact .contact-item .icon {
-	width: 70px;
-	margin: 0 auto 15px auto;
-}
-#contact .contact-info h1 {
-	font-size: 2rem;
-}
-#contact .contact-info h2 {
-	font-size: 1.5rem;
-	font-weight: 300;
-}
-
-
-/* 9. Footer */
-#footer {
-	background-color: var(--dark-bg);
-	color: var(--light-text);
-	text-align: center;
-	padding: 40px 0;
-}
-#footer .brand h1 {
-	font-size: 2.5rem;
-}
-#footer h2 {
-	font-size: 1.6rem;
-	font-weight: 300;
-	margin: 10px 0;
-}
-#footer p {
-	color: #aaa;
-	font-size: 1.4rem;
-}
-
-
-/* 10. Media Queries (Responsif) */
+/* Media Queries (Responsif) */
 @media only screen and (max-width: 1200px) {
-	#header .hamburger {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 50px;
-		height: 50px;
-		border: 2px solid white;
-		border-radius: 8px;
-		cursor: pointer;
-		position: relative;
-		z-index: 100;
-	}
-	#header .hamburger .bar {
-		width: 30px;
-		height: 2px;
-		background-color: white;
-		position: relative;
-		transition: background-color 0.3s;
-	}
+	#header .hamburger { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; border: 2px solid white; border-radius: 8px; cursor: pointer; position: relative; z-index: 100; }
+	#header .hamburger .bar { width: 30px; height: 2px; background-color: white; position: relative; transition: background-color 0.3s; }
 	#header .hamburger .bar::before,
-	#header .hamburger .bar::after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background-color: white;
-		left: 0;
-		transition: transform 0.3s ease;
-	}
+	#header .hamburger .bar::after { content: ''; position: absolute; width: 100%; height: 100%; background-color: white; left: 0; transition: transform 0.3s ease; }
 	#header .hamburger .bar::before { top: -8px; }
 	#header .hamburger .bar::after { top: 8px; }
 	#header .hamburger.active .bar { background-color: transparent; }
 	#header .hamburger.active .bar::before { transform: rotate(45deg); top: 0; }
 	#header .hamburger.active .bar::after { transform: rotate(-45deg); top: 0; }
-
-	#header .nav-list ul {
-		position: fixed;
-		top: 0;
-		left: 100%;
-		width: 100%;
-		height: 100vh;
-		background-color: var(--dark-bg);
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		z-index: 99;
-		transition: left 0.5s ease;
-		display: flex;
-	}
+	#header .nav-list ul { position: fixed; top: 0; left: 100%; width: 100%; height: 100vh; background-color: var(--dark-bg); flex-direction: column; justify-content: center; align-items: center; z-index: 99; transition: left 0.5s ease; display: flex; }
 	#header .nav-list ul.active { left: 0; }
-	#header .nav-list ul a { font-size: 2.5rem; text-align: center; padding: 15px; }
-	
+	#header .nav-list ul a { font-size: 2.5rem; text-align: center; padding: 15px; border-bottom: none; }
 	.dropdown { text-align: center; }
-	.dropdown-content {
-		display: block;
-		position: static;
-		background: transparent;
-		box-shadow: none;
-		padding-left: 0;
-        margin-top: 10px;
-		border-top: 1px solid #555;
-		padding-top: 10px;
-	}
+	.dropdown-content { display: block; position: static; background: transparent; box-shadow: none; padding-left: 0; margin-top: 10px; border-top: 1px solid #555; padding-top: 10px; }
     .dropdown-content a { font-size: 2rem; font-weight: 300; padding: 10px; }
 	.dropdown > a { pointer-events: none; }
 }
-
 @media only screen and (max-width: 768px) {
-	#about .container,
-	#projects .project-item,
-	#projects .project-item:nth-child(even) {
-		flex-direction: column;
-	}
-	#hero .hero-text h1 {
-		font-size: 4rem;
-	}
-	#hero .hero-text h2 {
-		font-size: 2rem;
-	}
-	#hero .profile-picture {
-		width: 150px;
-		height: 150px;
-	}
+	#about .container, #projects .project-item, #projects .project-item:nth-child(even) { flex-direction: column; }
+	#hero .hero-text h1 { font-size: 4rem; }
+	#hero .hero-text h2 { font-size: 2rem; }
+	#hero .profile-picture { width: 150px; height: 150px; }
 }
