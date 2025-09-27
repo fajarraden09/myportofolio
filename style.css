@@ -433,26 +433,32 @@ section {
 	.dropdown {
         text-align: center;
     }
-	.dropdown-content {
-		display: block;
-		position: static;
-		background: transparent;
-		box-shadow: none;
-		padding-left: 0; /* Hapus indentasi */
-        margin-top: 10px;
-		border-top: 1px solid #555; /* Garis pemisah */
-		padding-top: 10px;
-	}
-    .dropdown-content a {
-        font-size: 2rem; /* Ukuran font lebih kecil untuk sub-menu */
-        font-weight: 300;
-		padding: 10px;
+	/* --- DENGAN KODE BARU INI --- */
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	background-color: #3e4a58;
+	list-style: none;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+	border-radius: 0 0 5px 5px;
+	padding: 5px 0; /* Menambah sedikit jarak di atas dan bawah */
+}
+
+.dropdown-content a {
+	padding: 10px 25px; /* Menyesuaikan padding agar lebih seimbang */
+	font-size: 1.5rem;
+	color: var(--light-text);
+	display: block;
+	white-space: nowrap; /* INI KUNCINYA: Mencegah teks turun baris */
+}
     }
 	.dropdown > a {
 		/* Menonaktifkan link utama 'Portofolio' agar tidak bisa diklik */
 		pointer-events: none;
 	}
-}
 
 @media only screen and (max-width: 768px) {
 	/* Penyesuaian untuk layar yang lebih kecil lagi (HP) */
