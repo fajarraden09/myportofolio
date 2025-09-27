@@ -11,8 +11,8 @@ body {
 }
 
 .profile-picture {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid white;
@@ -49,3 +49,7 @@ section {
 .skill-icons .fa-file-word { color: #2B579A; }
 .skill-icons .fa-file-excel { color: #217346; }
 .skill-icons .fa-file-powerpoint { color: #D24726; }
+.skill-icons .fa-google-drive { color: #4285F4; }
+.skill-icons .fa-video { color: #000000; } /* Ikon untuk Capcut */
+.skill-icons .fa-palette { color: #FF9A00; } /* Ikon untuk Illustrator */
+.skill-icons .fa-pen-ruler { color: #31A8FF; } /* Ikon untuk Photoshop */
