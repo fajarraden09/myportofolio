@@ -1,138 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Portfolio Saya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Portfolio Saya</title>
 </head>
 <body>
-  <section id="header">
-    <div class="container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="#hero"><h1><span>NAMA</span> <span>ANDA</span></h1></a>
-        </div>
-        <div class="nav-list">
-          <div class="hamburger"><div class="bar"></div></div>
-          <ul>
-            <li><a href="#hero">Beranda</a></li>
-            <li><a href="#about">Tentang Saya</a></li>
-            <li class="dropdown">
-              <a href="#projects">Portofolio ▼</a>
-              <ul class="dropdown-content">
-                <li><a href="#projects-web">Proyek Web Dev</a></li>
-                <li><a href="#projects-admin">Pengalaman Admin</a></li>
-              </ul>
-            </li>
-            <li><a href="#skills">Keterampilan</a></li>
-            <li><a href="#contact">Kontak</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <main>
-    <section id="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="profile-picture">
-            <img src="./img/fotoku.png" alt="Foto Profil Anda">
-          </div>
-          <div class="hero-text">
-            <h1>[NAMA LENGKAP ANDA]</h1>
-            <h2>Web Developer & Spesialis Administrasi</h2>
-            <p>Selamat datang di portofolio saya. Saya bersemangat dalam menciptakan solusi digital yang efisien dan fungsional.</p>
-            <a href="#projects" class="cta">Lihat Proyek Saya</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-          <div class="col-left">
-              <div class="about-img">
-                <img src="./img/fotoku.png" alt="img">
-              </div>
-          </div>
-          <div class="col-right">
-              <h1 class="section-title">Tentang <span>Saya</span></h1>
-              <h2>Menjembatani Teknologi dan Proses Bisnis</h2>
-              <p>Saya adalah seorang pengembang web yang didukung oleh latar belakang di bidang administrasi. Saya memiliki kemampuan unik untuk memahami kebutuhan operasional bisnis dan menerjemahkannya menjadi solusi teknis yang efisien dan terstruktur.</p>
-          </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container">
-        <h1 class="section-title">Keter<span>am</span>pilan</h1>
-        <div class="skills-container">
-          <div class="skill-item">
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/code.png" /></div>
-            <h2>Teknis (Web Development)</h2>
-            <p><b>Bahasa:</b> PHP, JavaScript, HTML, CSS, Java<br><b>Framework:</b> Laravel, Vue.js, CodeIgniter<br><b>Tools:</b> Git, Docker, Figma, VS Code</p>
-          </div>
-          <div class="skill-item">
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png" /></div>
-            <h2>Administrasi</h2>
-            <p><b>Software:</b> Microsoft Office Suite (Advanced Excel)<br><b>Manajemen:</b> Manajemen Data, Penjadwalan<br><b>Proses:</b> Otomatisasi, Pengarsipan Digital</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h1 class="section-title">Port<span>ofolio</span></h1>
-        <div id="projects-web">
-          <h2 class="subsection-title">Proyek Web Development</h2>
-          <div class="project-item">
-            <div class="project-img"><img src="./img/sekolah.png" alt="img"></div>
-            <div class="project-info">
-              <h3>Project 1: Website Sekolah</h3>
-              <p>Platform online untuk informasi sekolah, mulai dari profil, kegiatan, hingga pengumuman. Dibangun menggunakan Laravel.</p>
-            </div>
-          </div>
-        </div>
-        <div id="projects-admin">
-          <h2 class="subsection-title">Pengalaman Administrasi (Studi Kasus)</h2>
-          <div class="project-item">
-            <div class="project-img"><img src="./img/admin.png" alt="img"></div>
-            <div class="project-info">
-              <h3>Studi Kasus 1: Otomatisasi Laporan</h3>
-              <p>Merancang script macro VBA di Excel untuk memproses data otomatis, mengurangi waktu kerja dari 8 jam menjadi 15 menit.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
+    <header id="header">
         <div class="container">
-          <h1 class="section-title">Kontak <span>Info</span></h1>
-          <div class="contact-items">
-            <div class="contact-item">
-              <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
-              <h2>+62 [Nomor Anda]</h2>
-            </div>
-            <div class="contact-item">
-              <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
-              <h2>[Email Anda]</h2>
-            </div>
-          </div>
+            <a href="#" class="brand">NAMA ANDA</a>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li class="dropdown">
+                        <a href="#projects">Portofolio ▼</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#projects-web">Proyek Web</a></li>
+                            <li><a href="#projects-admin">Proyek Admin</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#skills">Keterampilan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </section>
-  </main>
+    </header>
 
-  <footer id="footer">
-    <div class="container">
-      <div class="brand"><h1><span>NAMA</span> <span>ANDA</span></h1></div>
-      <p>Copyright © 2024. All rights reserved</p>
-    </div>
-  </footer>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <img src="./img/fotoku.png" alt="Foto Profil" class="profile-picture">
+                <h1>[NAMA LENGKAP ANDA]</h1>
+                <p class="subtitle">Web Developer & Spesialis Administrasi</p>
+                <a href="#projects" class="cta">Lihat Karya Saya</a>
+            </div>
+        </section>
 
-  <script src="./app.js"></script>
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">Tentang Saya</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="./img/fotoku.png" alt="Tentang Saya">
+                    </div>
+                    <div class="about-text">
+                        <h3>Menjembatani Teknologi dan Proses Bisnis</h3>
+                        <p>Saya adalah seorang pengembang web yang didukung oleh latar belakang di bidang administrasi. Saya memiliki kemampuan unik untuk memahami kebutuhan operasional bisnis dan menerjemahkannya menjadi solusi teknis yang efisien dan terstruktur.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Keterampilan</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Teknis (Web Development)</h3>
+                        <p><b>Bahasa:</b> PHP, JavaScript, HTML, CSS<br><b>Framework:</b> Laravel, Vue.js<br><b>Tools:</b> Git, Docker, Figma</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Administrasi</h3>
+                        <p><b>Software:</b> Microsoft Office Suite (Advanced Excel)<br><b>Manajemen:</b> Manajemen Data, Penjadwalan<br><b>Proses:</b> Otomatisasi, Pengarsipan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Portofolio</h2>
+                <div id="projects-web">
+                    <h3>Proyek Web Development</h3>
+                    <div class="project-card">
+                        <img src="./img/sekolah.png" alt="Proyek Website Sekolah">
+                        <div class="project-info">
+                            <h4>Website Sekolah</h4>
+                            <p>Platform informasi sekolah menggunakan Laravel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="projects-admin">
+                    <h3>Pengalaman Administrasi</h3>
+                    <div class="project-card">
+                        <img src="./img/admin.png" alt="Proyek Otomatisasi Laporan">
+                        <div class="project-info">
+                            <h4>Otomatisasi Laporan</h4>
+                            <p>Menggunakan Macro VBA Excel untuk mengurangi waktu kerja dari 8 jam menjadi 15 menit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Hubungi Saya</h2>
+                <p>Silakan hubungi saya melalui email atau telepon.</p>
+                <p class="contact-info"><strong>Email:</strong> [emailanda@example.com]</p>
+                <p class="contact-info"><strong>Telepon:</strong> [+62 123-4567-890]</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 [Nama Anda]. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
