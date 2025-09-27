@@ -7,12 +7,22 @@ body {
 
 #hero {
     background-color: #f8f9fa;
-    padding: 6rem 0;
+    padding: 5rem 0;
+}
+
+/* 2. Membuat Judul dan Subjudul Hero Lebih Rapi */
+#hero h1 {
+    font-size: 4.5rem; /* Sedikit mengecilkan judul utama */
+}
+#hero p.lead {
+    font-size: 1.8rem; /* Menyesuaikan ukuran subjudul */
+    margin-bottom: 2rem; /* Menambah jarak ke tombol */
 }
 
 .profile-picture {
-    width: 200px;
-    height: 200px;
+    width: 180px;  /* Ukuran ideal untuk desktop */
+    height: 180px; /* Ukuran ideal untuk desktop */
+    border-width: 6px; /* Membuat border sedikit lebih tebal */
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid white;
@@ -21,6 +31,45 @@ body {
 
 section {
     scroll-margin-top: 56px;
+	padding-top: 8rem; /* Menambah jarak di atas setiap judul section */
+    padding-bottom: 8rem; /* Menambah jarak di bawah setiap section */
+}
+
+/* 4. Menyesuaikan Ukuran Judul Section */
+h2.text-center.mb-5 {
+    font-size: 3.2rem; /* Sedikit mengecilkan judul section */
+    font-weight: 700;
+}
+
+/* 5. Merapikan Card pada Bagian Keterampilan */
+#skills .card {
+    border: none; /* Menghilangkan border agar lebih bersih */
+}
+#skills .card-title {
+    font-size: 1.8rem; /* Menyamakan ukuran judul card */
+}
+
+/* 6. Merapikan Card pada Bagian Portofolio */
+#projects .card {
+    border: none;
+}
+#projects .card-title {
+    font-size: 1.8rem;
+}
+
+/* 7. Penyesuaian untuk Tampilan Mobile agar Lebih Rapi */
+@media (max-width: 768px) {
+    .profile-picture {
+        width: 140px;
+        height: 140px;
+    }
+    #hero h1 {
+        font-size: 3.5rem;
+    }
+    section {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
 }
 
 /* Fitur Dropdown On-Hover untuk Desktop */
