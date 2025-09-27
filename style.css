@@ -65,11 +65,13 @@ body {
     display: flex;
 }
 
-.nav-links ul li a {
+.nav-links ul li a,
+.dropdown-trigger { /* TAMBAHKAN SELECTOR INI */
     color: #ddd;
     text-decoration: none;
     padding: 1rem 1.5rem;
     transition: color 0.3s;
+    cursor: default; /* Pastikan kursor tidak berubah menjadi tangan */
 }
 
 .nav-links ul li a:hover {
@@ -79,6 +81,10 @@ body {
 /* Dropdown */
 .dropdown {
     position: relative;
+}
+/* KUNCI PERBAIKAN: Gunakan .dropdown-container untuk trigger hover */
+.dropdown-container:hover .dropdown-content {
+    display: block;
 }
 .dropdown-content {
     display: none;
@@ -91,9 +97,7 @@ body {
     border-radius: 4px;
     list-style: none;
     padding: 0.5rem 0;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
+    z-index: 1001; /* Pastikan dropdown di atas konten lain */
 }
 .dropdown-content a {
     display: block;
