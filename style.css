@@ -48,7 +48,7 @@ p {
 	margin: 0 auto;
 }
 
-/* Header & Navigasi */
+/* 2. Header & Navigasi */
 #header {
 	position: fixed;
 	top: 0;
@@ -61,12 +61,16 @@ p {
 	display: flex;
 	align-items: center;
 }
-#header .nav-bar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+#header .container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
+
 #header .brand h1 {
 	font-size: 2.2rem;
 	color: white;
@@ -74,12 +78,15 @@ p {
 #header .brand h1 span {
 	color: var(--primary-color);
 }
+
 #header .nav-list ul {
 	list-style: none;
 	display: flex;
 	align-items: center;
 	height: 65px;
+	overflow: visible; /* PERBAIKAN UTAMA: Mengizinkan dropdown tampil */
 }
+
 #header .nav-list ul li a {
 	color: #e0e0e0;
 	font-size: 1.5rem;
@@ -91,10 +98,13 @@ p {
 	transition: color 0.3s ease;
 	border-bottom: 2px solid transparent;
 }
+
 #header .nav-list ul li a:hover {
 	color: white;
 	border-bottom-color: var(--primary-color);
 }
+
+/* Dropdown Menu */
 .dropdown {
 	position: relative;
     height: 100%;
@@ -103,7 +113,7 @@ p {
 	display: none;
 	position: absolute;
 	left: 0;
-	top: 95%;
+	top: 90%; /* Posisi dropdown agar sedikit ada jarak */
 	background-color: #3e4a58;
 	min-width: max-content;
 	list-style: none;
@@ -127,7 +137,11 @@ p {
 	background-color: var(--primary-color);
 	color: white;
 }
-#header .hamburger { display: none; }
+
+/* Hamburger Menu (Mobile) */
+#header .hamburger {
+	display: none;
+}
 
 /* Hero Section */
 #hero {
