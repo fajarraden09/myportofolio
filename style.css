@@ -45,23 +45,23 @@ p {
 }
 
 /* 2. Header & Navigasi */
-/* Mengatur Header Utama */
+/* 1. Pengaturan Dasar Header */
 #header {
-	position: fixed; /* Kunci agar header menempel di atas */
+	position: fixed; /* Memastikan header tetap di atas saat scroll */
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 70px; /* Tinggi header yang pas */
+	height: 70px; /* Tinggi header yang pasti */
 	background-color: var(--dark-bg);
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-	z-index: 1000;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	z-index: 9999; /* z-index sangat tinggi agar selalu di paling atas */
 	display: flex;
 	align-items: center;
 }
 
-/* Mengatur Container di dalam Header */
+/* 2. Container di dalam Header */
 #header .container {
-	min-height: auto; /* INI KUNCINYA: Menghapus tinggi 100vh dari header */
+	min-height: auto; /* MENGHAPUS tinggi 100vh dari template lama */
 	width: 90%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -70,7 +70,7 @@ p {
 	justify-content: space-between;
 }
 
-/* Mengatur Brand/Logo */
+/* 3. Brand/Logo */
 #header .brand h1 {
 	font-size: 2.5rem;
 	color: white;
@@ -80,11 +80,11 @@ p {
 	color: var(--primary-color);
 }
 
-/* Mengatur Daftar Navigasi */
+/* 4. Daftar Navigasi (Desktop) */
 #header .nav-list ul {
 	list-style: none;
 	display: flex;
-	align-items: center; /* Memastikan semua item sejajar */
+	align-items: center;
 }
 
 #header .nav-list ul li a {
@@ -99,20 +99,21 @@ p {
 	color: var(--primary-color);
 }
 
-/* Mengatur Dropdown Menu */
+/* 5. Dropdown Menu (Desktop) - PERBAIKAN UTAMA */
 .dropdown {
-	position: relative;
+	position: relative; /* Wajib ada agar dropdown muncul di posisi yang benar */
 }
 .dropdown-content {
 	display: none;
 	position: absolute;
 	left: 0;
-	top: 100%;
+	top: 90%; /* Sedikit turun agar tidak terlalu mepet */
 	background-color: #3e4a58;
 	list-style: none;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-	border-radius: 0 0 5px 5px;
+	border-radius: 5px;
 	padding: 5px 0;
+	z-index: 10000; /* Pastikan dropdown di atas segalanya */
 }
 .dropdown:hover .dropdown-content {
 	display: block;
@@ -122,18 +123,17 @@ p {
 	font-size: 1.5rem;
 	color: var(--light-text);
 	display: block;
-	white-space: nowrap; /* Mencegah teks turun baris */
+	white-space: nowrap; /* KUNCI #1: Mencegah teks turun baris */
 }
 .dropdown-content a:hover {
 	background-color: var(--primary-color);
 	color: white;
 }
 
-/* Sembunyikan Hamburger di Desktop */
+/* 6. Hamburger Menu (Mobile) */
 #header .hamburger {
-	display: none;
+	display: none; /* Sembunyikan di desktop */
 }
-
 
 /* 3. Hero Section */
 #hero {
@@ -362,12 +362,10 @@ section {
 }
 
 
-/* 10. Media Queries (Responsif) */
+/* 7. Kode Responsif untuk Mobile & Tablet */
 @media only screen and (max-width: 1200px) {
-	/* --- STYLES FOR MOBILE & TABLET --- */
-
 	#header .hamburger {
-		display: flex; /* Tampilkan tombol hamburger */
+		display: flex;
 		align-items: center;
 		justify-content: center;
 		width: 50px;
@@ -375,15 +373,15 @@ section {
 		border: 2px solid white;
 		border-radius: 8px;
 		cursor: pointer;
-		position: relative; /* Diperlukan agar z-index berfungsi */
-		z-index: 100; /* Pastikan hamburger di atas menu overlay */
+		position: relative;
+		z-index: 100;
 	}
 	#header .hamburger .bar {
 		width: 30px;
 		height: 2px;
 		background-color: white;
 		position: relative;
-		transition: background-color 0.3s ease;
+		transition: background-color 0.3s;
 	}
 	#header .hamburger .bar::before,
 	#header .hamburger .bar::after {
@@ -395,81 +393,43 @@ section {
 		left: 0;
 		transition: transform 0.3s ease;
 	}
-	#header .hamburger .bar::before {
-		top: -8px;
-	}
-	#header .hamburger .bar::after {
-		top: 8px;
-	}
-
-	/* Animasi X saat hamburger aktif */
-	#header .hamburger.active .bar {
-		background-color: transparent;
-	}
-	#header .hamburger.active .bar::before {
-		transform: rotate(45deg);
-		top: 0;
-	}
-	#header .hamburger.active .bar::after {
-		transform: rotate(-45deg);
-		top: 0;
-	}
+	#header .hamburger .bar::before { top: -8px; }
+	#header .hamburger .bar::after { top: 8px; }
+	#header .hamburger.active .bar { background-color: transparent; }
+	#header .hamburger.active .bar::before { transform: rotate(45deg); top: 0; }
+	#header .hamburger.active .bar::after { transform: rotate(-45deg); top: 0; }
 
 	#header .nav-list ul {
-		/* Ini adalah bagian kunci: membuat menu menjadi overlay layar penuh */
 		position: fixed;
 		top: 0;
-		left: 100%; /* Mulai dari luar layar sebelah kanan */
-		width: 100%;  /* Lebar penuh layar */
-		height: 100vh; /* Tinggi penuh layar */
+		left: 100%;
+		width: 100%;
+		height: 100vh;
 		background-color: var(--dark-bg);
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		z-index: 99; /* Tepat di bawah tombol hamburger */
+		z-index: 99;
 		transition: left 0.5s ease;
 		display: flex;
 	}
-	#header .nav-list ul.active {
-		left: 0; /* Pindahkan ke dalam layar saat aktif */
+	#header .nav-list ul.active { left: 0; }
+	#header .nav-list ul a { font-size: 2.5rem; text-align: center; padding: 15px; }
+	
+	.dropdown { text-align: center; }
+	.dropdown-content {
+		display: block;
+		position: static;
+		background: transparent;
+		box-shadow: none;
+		padding-left: 0;
+        margin-top: 10px;
+		border-top: 1px solid #555;
+		padding-top: 10px;
 	}
-
-	/* Menata ulang item menu di tampilan mobile */
-	#header .nav-list ul a {
-		font-size: 2.5rem;
-		text-align: center;
-		padding: 15px;
-	}
-	.dropdown {
-        text-align: center;
-    }
-	/* --- DENGAN KODE BARU INI --- */
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	left: 0;
-	top: 100%;
-	background-color: #3e4a58;
-	list-style: none;
-	box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-	border-radius: 0 0 5px 5px;
-	padding: 5px 0; /* Menambah sedikit jarak di atas dan bawah */
+    .dropdown-content a { font-size: 2rem; font-weight: 300; padding: 10px; }
+	.dropdown > a { pointer-events: none; }
 }
-
-.dropdown-content a {
-	padding: 10px 25px; /* Menyesuaikan padding agar lebih seimbang */
-	font-size: 1.5rem;
-	color: var(--light-text);
-	display: block;
-	white-space: nowrap; /* INI KUNCINYA: Mencegah teks turun baris */
-}
-    }
-	.dropdown > a {
-		/* Menonaktifkan link utama 'Portofolio' agar tidak bisa diklik */
-		pointer-events: none;
-	}
-
 @media only screen and (max-width: 768px) {
 	/* Penyesuaian untuk layar yang lebih kecil lagi (HP) */
 	#about .about,
