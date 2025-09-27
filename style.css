@@ -211,7 +211,9 @@ section:nth-child(even) {
 
 /* Responsive (Mobile) */
 @media (max-width: 768px) {
-    .hamburger { display: block; }
+    .hamburger {
+        display: block;
+    }
     .nav-links {
         display: none;
         position: fixed;
@@ -220,10 +222,25 @@ section:nth-child(even) {
         width: 100%;
         height: calc(100% - var(--header-height));
         background-color: var(--dark-color);
+        /* KUNCI PERBAIKAN: z-index ditambahkan */
+        z-index: 999;
     }
-    .nav-links.active { display: block; }
-    .nav-links ul { flex-direction: column; padding-top: 2rem; }
-    .nav-links ul li { width: 100%; text-align: center; }
-    .dropdown:hover .dropdown-content { display: none; } /* Disable hover dropdown on mobile */
-    .about-content { flex-direction: column; }
+    .nav-links.active {
+        display: block;
+    }
+    .nav-links ul {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+    .nav-links ul li {
+        width: 100%;
+        text-align: center;
+    }
+    /*
+      KUNCI PERBAIKAN: Baris yang menyebabkan error dropdown dihapus dari sini.
+      Dropdown di mobile akan dikontrol oleh JavaScript, bukan CSS hover.
+    */
+    .about-content {
+        flex-direction: column;
+    }
 }
