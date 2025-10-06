@@ -116,3 +116,61 @@ h2.text-center.mb-5 {
 .skill-icons .fa-video { color: #000000; } /* Ikon untuk Capcut */
 .skill-icons .fa-palette { color: #FF9A00; } /* Ikon untuk Illustrator */
 .skill-icons .fa-pen-ruler { color: #31A8FF; } /* Ikon untuk Photoshop */
+
+/* -- Style Khusus untuk Mencetak Halaman -- */
+@media print {
+
+    /* Sembunyikan elemen yang tidak perlu dicetak */
+    .navbar, 
+    #hero .btn, 
+    #contact .no-print, 
+    footer {
+        display: none !important;
+    }
+
+    /* Atur ulang layout dasar untuk kertas */
+    body {
+        padding-top: 0 !important;
+        font-size: 11pt; /* Ukuran font yang ideal untuk cetak */
+    }
+
+    /* Pastikan semua latar belakang putih dan teks hitam */
+    section, .card, body {
+        background-color: #ffffff !important;
+        box-shadow: none !important;
+        color: #000000 !important;
+    }
+    
+    h1, h2, h3, h4, h5, p, b, li, a {
+        color: #000000 !important;
+    }
+    
+    /* Atur ulang padding section agar tidak terlalu boros tempat */
+    section {
+        padding: 2rem 0 !important;
+        scroll-margin-top: 0;
+    }
+
+    /* Mengatur agar gambar tidak pecah dan proporsional */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid; /* Mencegah gambar terpotong di antara halaman */
+    }
+    
+    /* Mengatur agar card tidak terpotong antar halaman */
+    .card {
+        border: 1px solid #ddd !important; /* Tambahkan border tipis agar card terlihat */
+        page-break-inside: avoid;
+    }
+    
+    /* Menampilkan URL dari link agar bisa diakses dari dokumen cetak */
+    a[href^="http"]:after, a[href^="https"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8rem;
+        color: #555 !important;
+    }
+    
+    a[href^="https://wa.me"]:after {
+        content: ""; /* Jangan tampilkan link untuk WhatsApp */
+    }
+}
