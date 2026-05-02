@@ -174,3 +174,153 @@ h2.text-center.mb-5 {
         content: ""; /* Jangan tampilkan link untuk WhatsApp */
     }
 }
+
+/* --- VARIABLES UNTUK DARK/LIGHT MODE --- */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --bg-light: #f8f9fa;
+    --card-bg: #ffffff;
+    --nav-bg: rgba(33, 37, 41, 1); /* Dark navbar awal */
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --bg-light: #1e1e1e;
+    --card-bg: #2d2d2d;
+    --nav-bg: rgba(18, 18, 18, 1);
+}
+
+body {
+    padding-top: 56px; 
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Teks Muted pada Dark Mode */
+body.dark-mode .text-muted, body.dark-mode .text-secondary {
+    color: #a0a0a0 !important;
+}
+
+/* Background Custom menyesuaikan Tema */
+.bg-custom-light {
+    background-color: var(--bg-light);
+    transition: background-color 0.3s ease;
+}
+
+/* --- GLASSMORPHISM NAVBAR --- */
+.navbar {
+    transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    background-color: var(--nav-bg) !important;
+}
+
+.navbar.scrolled {
+    background-color: rgba(33, 37, 41, 0.75) !important;
+    backdrop-filter: blur(10px); /* Efek Kaca Buram */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .navbar.scrolled {
+    background-color: rgba(18, 18, 18, 0.8) !important;
+}
+
+#hero {
+    background-color: var(--bg-light);
+    padding: 2rem 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#hero h1 { font-size: 3.5rem; }
+#hero p.lead { font-size: 1.5rem; margin-bottom: 2rem; }
+
+/* Efek Mengetik */
+.typing-container {
+    min-height: 35px; /* Mencegah layout melompat */
+}
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--text-color);
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.profile-picture {
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #0d6efd; /* Diubah agar lebih menonjol */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.4s ease;
+}
+.profile-picture:hover {
+    transform: scale(1.05); /* Zoom in saat dihover */
+}
+
+section {
+    scroll-margin-top: 70px;
+    padding: 6rem 0;
+}
+
+/* --- EFEK HOVER PADA KARTU (MICRO-INTERACTION) --- */
+.card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+.hover-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+body.dark-mode .hover-card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5) !important;
+}
+
+/* Penyesuaian Ikon */
+.skill-icons {
+    font-size: 3.5rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.skill-icons i {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.skill-icons i:hover {
+    transform: translateY(-10px) scale(1.1); /* Efek melompat saat dihover */
+}
+
+.skill-icons .fa-php { color: #777BB4; }
+.skill-icons .fa-laravel { color: #FF2D20; }
+.skill-icons .fa-vuejs { color: #4FC08D; }
+.skill-icons .fa-figma { color: #F24E1E; }
+/* ... (Warna ikon lainnya tetap sama) ... */
+
+.custom-justify { text-align: justify; }
+
+/* Fitur Dropdown On-Hover untuk Desktop */
+@media (min-width: 992px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0; 
+        animation: fadeIn 0.3s ease;
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* -- Print Styles (Tetap sama seperti milik Anda sebelumnya) -- */

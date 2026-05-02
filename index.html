@@ -6,19 +6,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Tambahan CDN AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Portofolio Fajar</title>
     <link rel="icon" type="image/png" href="./img/fotoku.png">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <!-- NAVBAR DENGAN FITUR DARK MODE TOGGLE -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top transition-all" id="mainNavbar">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#hero">FAJAR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#hero">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Keterampilan</a></li>
@@ -33,217 +36,214 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                    <!-- Tombol Dark/Light Mode -->
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="hero" class="text-center">
-        <div class="container">
-            <img src="./img/fotoku.png" alt="Foto Profil" class="profile-picture">
-            <h1 class="display-4 fw-bold mt-4">R. Fajar Dwi Novianto</h1>
-            <p class="lead text-secondary">Web Developer & Spesialis Administrasi</p>
-            <a href="#projects" class="btn btn-primary btn-lg mt-3">Lihat Karya Saya</a>
+    <section id="hero" class="text-center d-flex align-items-center" style="min-height: 100vh;">
+        <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <img src="./img/fotoku.png" alt="Foto Profil" class="profile-picture mb-3">
+            <h1 class="display-4 fw-bold mt-2">R. Fajar Dwi Novianto</h1>
+            <!-- TYPING EFFECT CONTAINER -->
+            <p class="lead text-secondary typing-container">
+                <span id="typed-text"></span><span class="cursor">|</span>
+            </p>
+            <a href="#projects" class="btn btn-primary btn-lg mt-3 shadow">Lihat Karya Saya</a>
         </div>
     </section>
 
     <section id="about" class="py-5">
-        <div class="container">
+        <div class="container" data-aos="fade-right" data-aos-duration="1000">
             <h2 class="text-center mb-5">Tentang Saya</h2>
             <div class="row align-items-center">
-                <div class="col-md-4 text-center">
-                    <img src="./img/Foto_Background biru.png" class="img-fluid rounded-3 shadow-sm" alt="Tentang Saya">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="./img/Foto_Background biru.png" class="img-fluid rounded-3 shadow-lg" alt="Tentang Saya">
                 </div>
                 <div class="col-md-8">
                     <h3>Menjembatani Teknologi dan Proses Bisnis</h3>
-                    <p class="text-muted">Sebagai lulusan baru Sarjana Informatika dengan predikat cumlaude (IPK 3.6), saya mendedikasikan fokus akademis saya pada bidang web development. Saya percaya bahwa teknologi web adalah alat yang kuat untuk memecahkan masalah nyata. Pengalaman saya tidak hanya terbatas pada dunia coding. Melalui keterlibatan aktif dalam kegiatan organisasi dan peran administratif, saya belajar bagaimana mengelola proyek, berkolaborasi dalam tim, dan memastikan setiap detail pekerjaan terselesaikan dengan baik. Kombinasi unik antara pemahaman teknis dan keterampilan manajerial ini memungkinkan saya untuk menjembatani kebutuhan bisnis dengan solusi digital yang efektif.</p>
+                    <p class="text-muted custom-justify">Sebagai lulusan baru Sarjana Informatika dengan predikat cumlaude (IPK 3.6), saya mendedikasikan fokus akademis saya pada bidang web development. Saya percaya bahwa teknologi web adalah alat yang kuat untuk memecahkan masalah nyata. Pengalaman saya tidak hanya terbatas pada dunia coding. Melalui keterlibatan aktif dalam kegiatan organisasi dan peran administratif, saya belajar bagaimana mengelola proyek, berkolaborasi dalam tim, dan memastikan setiap detail pekerjaan terselesaikan dengan baik. Kombinasi unik antara pemahaman teknis dan keterampilan manajerial ini memungkinkan saya untuk menjembatani kebutuhan bisnis dengan solusi digital yang efektif.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5">Keterampilan</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-5 mb-4">
-                <div class="card shadow-sm h-100 text-center">
-                    <div class="card-body">
-                        <div class="skill-icons">
-                            <i class="fa-brands fa-php"></i>
-                            <i class="fa-brands fa-laravel"></i>
-                            <i class="fa-brands fa-vuejs"></i>
-                            <i class="fa-brands fa-figma"></i>
+    <section id="skills" class="py-5 bg-custom-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Keterampilan</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card shadow-sm h-100 text-center hover-card">
+                        <div class="card-body">
+                            <div class="skill-icons">
+                                <i class="fa-brands fa-php"></i>
+                                <i class="fa-brands fa-laravel"></i>
+                                <i class="fa-brands fa-vuejs"></i>
+                                <i class="fa-brands fa-figma"></i>
+                            </div>
+                            <h4 class="card-title mt-3">Teknis (Web Development)</h4>
+                            <p class="card-text text-start">
+                                <b>Bahasa:</b> PHP, JavaScript, HTML, CSS, SQL<br>
+                                <b>Framework/Library:</b> Laravel, Vue.js, Leaflet.js, Cesium<br>
+                                <b>Tools:</b> Git, Docker, Figma, Vite
+                            </p>
                         </div>
-                        <h4 class="card-title mt-3">Teknis (Web Development)</h4>
-                        <p class="card-text text-start">
-                            <b>Bahasa:</b> PHP, JavaScript, HTML, CSS, SQL<br>
-                            <b>Framework:</b> Laravel, Vue.js, CodeIgniter<br>
-                            <b>Tools:</b> Git, Docker, Figma
-                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-5 mb-4">
-                <div class="card shadow-sm h-100 text-center">
-                    <div class="card-body">
-                        <div class="skill-icons">
-                            <i class="fa-solid fa-file-word"></i>
-                            <i class="fa-solid fa-file-excel"></i>
-                            <i class="fa-solid fa-file-powerpoint"></i>
-                            <i class="fa-brands fa-google-drive"></i>
+                <div class="col-md-6 col-lg-5 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card shadow-sm h-100 text-center hover-card">
+                        <div class="card-body">
+                            <div class="skill-icons">
+                                <i class="fa-solid fa-file-word"></i>
+                                <i class="fa-solid fa-file-excel"></i>
+                                <i class="fa-solid fa-google-drive"></i>
+                            </div>
+                            <h4 class="card-title mt-3">Administrasi</h4>
+                            <p class="card-text text-start">
+                                <b>Software:</b> Microsoft Office Suite Tools & Google Workspace<br>
+                                <b>Manajemen:</b> Manajemen Data, Penjadwalaan<br>
+                                <b>Proses:</b> Otomatisasi, Pengarsipan, Presentasi
+                            </p>
                         </div>
-                        <h4 class="card-title mt-3">Administrasi</h4>
-                        <p class="card-text text-start">
-                            <b>Software:</b> Microsoft Office Suite Tools & Google Workspace<br>
-                            <b>Manajemen:</b> Manajemen Data, Penjadwalaan<br>
-                            <b>Proses:</b> Otomatisasi, Pengarsipan, Presentasi
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-5 mb-4">
-                <div class="card shadow-sm h-100 text-center">
-                    <div class="card-body">
-                        <div class="skill-icons">
-                            <i class="fa-solid fa-video"></i>
-                            <i class="fa-solid fa-palette"></i>
-                            <i class="fa-solid fa-pen-ruler"></i>
-                        </div>
-                        <h4 class="card-title mt-3">Multimedia</h4>
-                        <p class="card-text text-start">
-                            <b>Video Editing:</b> Capcut<br>
-                            <b>Desain Grafis:</b> Adobe Photoshop, Adobe Illustrator
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section id="projects" class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5">Portofolio</h2>
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Portofolio</h2>
 
-        <div id="projects-web" class="mb-5">
-            <h3 class="text-center mb-4">Proyek Web Development</h3>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/rental.png" class="card-img-top" alt="Proyek Website Rental PS">
-                        <div class="card-body">
-                            <h5 class="card-title">Aplikasi Rental Playstation</h5>
-                            <p class="card-text">Sistem manajemen berbasis web untuk rental Playstation, mencakup data pelanggan, transaksi, dan laporan.</p>
+            <!-- PROYEK WEB DEVELOPMENT -->
+            <div id="projects-web" class="mb-5">
+                <h3 class="text-center mb-4" data-aos="fade-right">Proyek Web Development</h3>
+                <div class="row">
+                    <!-- PROYEK WEB GIS (MAGANG) -->
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm h-100 hover-card border-primary">
+                            <div class="card-header bg-primary text-white fw-bold">Unggulan</div>
+                            <img src="./img/webgis.png" class="card-img-top" alt="Proyek Web GIS IT Sensing"> 
+                            <div class="card-body">
+                                <h5 class="card-title">Aplikasi Web GIS & IT Sensing</h5>
+                                <h6 class="text-muted mb-2"><i class="fa-solid fa-briefcase"></i> Proyek Magang (6 Bulan)</h6>
+                                <p class="card-text">Pengembangan sistem pemetaan digital interaktif berbasis <i>storymap</i>. Mengimplementasikan pustaka Leaflet dan Cesium untuk peralihan mode peta 2D/3D. Fitur mencakup penanganan data <i>layer</i> GeoJSON dengan simbologi dinamis dari *database*, serta integrasi fitur <i>search layer</i> secara UI/UX pada <i>footer sidebar</i> untuk alur kerja operasional yang lebih bersih.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/organisasi.png" class="card-img-top" alt="Proyek Website Organisasi">
-                        <div class="card-body">
-                            <h5 class="card-title">Website Organisasi (HMIF)</h5>
-                            <p class="card-text">Website profil untuk Himpunan Mahasiswa Informatika, menampilkan informasi kepengurusan, artikel, dan aspirasi.</p>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/rental.png" class="card-img-top" alt="Proyek Website Rental PS">
+                            <div class="card-body">
+                                <h5 class="card-title">Aplikasi Rental Playstation</h5>
+                                <p class="card-text">Sistem manajemen berbasis web untuk rental Playstation, mencakup data pelanggan, transaksi, dan laporan.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/Kafe_admin.png" class="card-img-top" alt="Proyek Website Organisasi">
-                        <div class="card-body">
-                            <h5 class="card-title">Website POS Kasir kafe</h5>
-                            <p class="card-text">Website Dashboard untuk manajemen kafe yang melacak bahan baku, penjualan, dan laporan stok secara *real-time*.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="projects-admin" class="mb-5">
-            <h3 class="text-center mb-4">Pengalaman Administrasi</h3>
-            <div class="row justify-content-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/HMIF.JPG" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
-                        <div class="card-body">
-                            <h5 class="card-title">Sebagai Ketua Himpunan Mahasiswa Informatika</h5>
-                            <p class="card-text">Membentuk program kerja dan Mengawasi Pelaksanaan Program Kerja.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/KPPS.jpg" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
-                        <div class="card-body">
-                            <h5 class="card-title">Petugas KPPS Desa</h5>
-                            <p class="card-text">Menyelenggaran Pemungutan dan Perhitungan Suara di TPS Serta mendata pemilih yang berpartisipasi melakukan pencoblosan.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/Sipedet.jpg" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
-                        <div class="card-body">
-                            <h5 class="card-title">Petugas Pendataan Ekonomi Sosial Desa</h5>
-                            <p class="card-text">Mencatat dan Mengumpulkan data sosial serta ekonomi masyarakat langsung di lapangan menggunakan aplikasi khusus.</p>
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/Kafe_admin.png" class="card-img-top" alt="Proyek POS Kasir">
+                            <div class="card-body">
+                                <h5 class="card-title">Website POS Kasir Kafe</h5>
+                                <p class="card-text">Website Dashboard untuk manajemen kafe yang melacak bahan baku, penjualan, dan laporan stok secara <i>real-time</i>.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="certificates">
-            <h3 class="text-center mb-4">Sertifikat & Pelatihan</h3>
-            <div class="row justify-content-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/office-lkp.png" class="card-img-top" alt="Sertifikat Web Development">
-                        <div class="card-body">
-                            <h5 class="card-title">Sertifikasi Microsoft Office</h5>
-                            <p class="card-text">Dikeluarkan oleh LKP Borju Komputer. Dengan Hasil Capaian adalah Expert Microsoft Word, Excel, dan PowerPoint</p>
+            <!-- PENGALAMAN ADMINISTRASI -->
+            <div id="projects-admin" class="mb-5">
+                <h3 class="text-center mb-4" data-aos="fade-right">Pengalaman Administrasi</h3>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/HMIF.JPG" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
+                            <div class="card-body">
+                                <h5 class="card-title">Sebagai Ketua Himpunan Mahasiswa Informatika</h5>
+                                <p class="card-text">Membentuk program kerja dan Mengawasi Pelaksanaan Program Kerja.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/KPPS.jpg" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
+                            <div class="card-body">
+                                <h5 class="card-title">Petugas KPPS Desa</h5>
+                                <p class="card-text">Menyelenggaran Pemungutan dan Perhitungan Suara di TPS Serta mendata pemilih yang berpartisipasi melakukan pencoblosan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/Sipedet.jpg" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
+                            <div class="card-body">
+                                <h5 class="card-title">Petugas Pendataan Ekonomi Sosial Desa</h5>
+                                <p class="card-text">Mencatat dan Mengumpulkan data sosial serta ekonomi masyarakat langsung di lapangan menggunakan aplikasi khusus.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/Python course.png" class="card-img-top" alt="Sertifikat Laravel">
-                        <div class="card-body">
-                            <h5 class="card-title">Sertifikat Python 101 for Data Science</h5>
-                            <p class="card-text">Dikeluarkan oleh Cognitive Class. Berhasil menyelesaikan dan menerima nilai kelulusan di Pyton 101 untuk ilmu data</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-4 mb-4">
-                    <div class="card shadow-sm h-100">
-                        <img src="./img/TOEFL-BEGINNER_page-0001.jpg" class="card-img-top" alt="Sertifikat Laravel">
-                        <div class="card-body">
-                            <h5 class="card-title">Sertifikat Amikom English Proficiency Test</h5>
-                            <p class="card-text">Dikeluarkan oleh Universitas Amikom Yogyakarta. Dengan Hasil capaian Test adalah Memiliki Level Proficiency : Beginner.</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- SERTIFIKAT & PELATIHAN -->
+            <div id="certificates">
+                <h3 class="text-center mb-4" data-aos="fade-right">Sertifikat & Pelatihan</h3>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/office-lkp.png" class="card-img-top" alt="Sertifikat Web Development">
+                            <div class="card-body">
+                                <h5 class="card-title">Sertifikasi Microsoft Office</h5>
+                                <p class="card-text">Dikeluarkan oleh LKP Borju Komputer. Dengan Hasil Capaian adalah Expert Microsoft Word, Excel, dan PowerPoint</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/Python course.png" class="card-img-top" alt="Sertifikat Laravel">
+                            <div class="card-body">
+                                <h5 class="card-title">Sertifikat Python 101 for Data Science</h5>
+                                <p class="card-text">Dikeluarkan oleh Cognitive Class. Berhasil menyelesaikan dan menerima nilai kelulusan di Pyton 101 untuk ilmu data</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/TOEFL-BEGINNER_page-0001.jpg" class="card-img-top" alt="Sertifikat Laravel">
+                            <div class="card-body">
+                                <h5 class="card-title">Sertifikat Amikom English Proficiency Test</h5>
+                                <p class="card-text">Dikeluarkan oleh Universitas Amikom Yogyakarta. Dengan Hasil capaian Test adalah Memiliki Level Proficiency : Beginner.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
-
-    <section id="contact" class="py-5 bg-light">
-        <div class="container text-center">
+    <section id="contact" class="py-5 bg-custom-light text-center">
+        <div class="container" data-aos="zoom-in">
             <h2 class="mb-4">Hubungi Saya</h2>
             <p class="lead">Silakan hubungi saya melalui email atau telepon.</p>
-            <p class="h4 mt-4"><strong>Email:</strong> fajarraden9019@gmail.com</p>
-            <p class="h4"><strong>WhatsApp:</strong> <a href="https://wa.me/6281225061527" target="_blank">+6281225061527</a></p>
-            <button onclick="window.print()" class="btn btn-secondary mt-4 no-print">
+            <div class="d-flex justify-content-center gap-4 mt-4 flex-wrap">
+                <p class="h4"><i class="fa-solid fa-envelope text-danger"></i> fajarraden9019@gmail.com</p>
+                <p class="h4"><i class="fa-brands fa-whatsapp text-success"></i> <a href="https://wa.me/6281225061527" target="_blank" class="text-decoration-none">+6281225061527</a></p>
+            </div>
+            <button onclick="window.print()" class="btn btn-secondary mt-4 shadow-sm hover-btn no-print">
                 <i class="fas fa-print"></i> Cetak Halaman
             </button>
         </div>
@@ -255,7 +255,10 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tambahan Script AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
