@@ -6,14 +6,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Tambahan CDN AOS (Animate On Scroll) -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Portofolio Fajar</title>
     <link rel="icon" type="image/png" href="./img/fotoku.png">
 </head>
 <body>
 
-    <!-- NAVBAR DENGAN FITUR DARK MODE TOGGLE -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top transition-all" id="mainNavbar">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#hero">FAJAR</a>
@@ -36,7 +34,6 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-                    <!-- Tombol Dark/Light Mode -->
                     <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
                         <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-moon"></i>
@@ -51,7 +48,6 @@
         <div class="container" data-aos="fade-up" data-aos-duration="1000">
             <img src="./img/fotoku.png" alt="Foto Profil" class="profile-picture mb-3">
             <h1 class="display-4 fw-bold mt-2">R. Fajar Dwi Novianto</h1>
-            <!-- TYPING EFFECT CONTAINER -->
             <p class="lead text-secondary typing-container">
                 <span id="typed-text"></span><span class="cursor">|</span>
             </p>
@@ -121,111 +117,118 @@
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Portofolio</h2>
 
-            <!-- PROYEK WEB DEVELOPMENT -->
             <div id="projects-web" class="mb-5">
                 <h3 class="text-center mb-4" data-aos="fade-right">Proyek Web Development</h3>
                 <div class="row">
-                    <!-- PROYEK WEB GIS (MAGANG) -->
-                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="card shadow-sm h-100 hover-card border-primary">
-                            <div class="card-header bg-primary text-white fw-bold">Unggulan</div>
+                            <!-- <div class="card-header bg-primary text-white fw-bold">Unggulan</div> -->
                             <img src="./img/webgis.png" class="card-img-top" alt="Proyek Web GIS IT Sensing"> 
                             <div class="card-body">
                                 <h5 class="card-title">Aplikasi Web GIS & IT Sensing</h5>
                                 <h6 class="text-muted mb-2"><i class="fa-solid fa-briefcase"></i> Proyek Magang (6 Bulan)</h6>
-                                <p class="card-text">Pengembangan sistem pemetaan digital interaktif berbasis <i>storymap</i>. Mengimplementasikan pustaka Leaflet dan Cesium untuk peralihan mode peta 2D/3D. Fitur mencakup penanganan data <i>layer</i> GeoJSON dengan simbologi dinamis dari *database*, serta integrasi fitur <i>search layer</i> secara UI/UX pada <i>footer sidebar</i> untuk alur kerja operasional yang lebih bersih.</p>
+                                <p class="card-text">Pengembangan sistem pemetaan digital interaktif berbasis <i>storymap</i>. Mengimplementasikan pustaka Leaflet dan Cesium untuk peralihan mode peta 2D/3D serta integrasi simbologi dinamis.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card shadow-sm h-100 hover-card">
-                            <img src="./img/rental.png" class="card-img-top" alt="Proyek Website Rental PS">
-                            <div class="card-body">
-                                <h5 class="card-title">Aplikasi Rental Playstation</h5>
-                                <p class="card-text">Sistem manajemen berbasis web untuk rental Playstation, mencakup data pelanggan, transaksi, dan laporan.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
                         <div class="card shadow-sm h-100 hover-card">
                             <img src="./img/Kafe_admin.png" class="card-img-top" alt="Proyek POS Kasir">
                             <div class="card-body">
                                 <h5 class="card-title">Website POS Kasir Kafe</h5>
-                                <p class="card-text">Website Dashboard untuk manajemen kafe yang melacak bahan baku, penjualan, dan laporan stok secara <i>real-time</i>.</p>
+                                <p class="card-text">Dashboard manajemen kafe untuk melacak inventaris bahan baku, memantau penjualan, dan menyajikan laporan stok secara <i>real-time</i>.</p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/rental.png" class="card-img-top" alt="Proyek Website Rental PS">
+                            <div class="card-body">
+                                <h5 class="card-title">Aplikasi Rental Playstation</h5>
+                                <p class="card-text">Sistem manajemen berbasis web untuk rental Playstation, mencakup pengolahan data pelanggan, transaksi harian, dan pelaporan otomatis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card shadow-sm h-100 hover-card">
+                            <img src="./img/organisasi.png" class="card-img-top" alt="Website HMIF">
+                            <div class="card-body">
+                                <h5 class="card-title">Website Organisasi (HMIF)</h5>
+                                <p class="card-text">Website profil Himpunan Mahasiswa Informatika yang berfungsi sebagai pusat informasi kepengurusan, artikel kegiatan, dan wadah aspirasi.</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <!-- PENGALAMAN ADMINISTRASI -->
             <div id="projects-admin" class="mb-5">
                 <h3 class="text-center mb-4" data-aos="fade-right">Pengalaman Administrasi</h3>
                 <div class="row justify-content-center">
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="card shadow-sm h-100 hover-card">
-                            <img src="./img/HMIF.JPG" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
+                            <img src="./img/HMIF.JPG" class="card-img-top" alt="Ketua HMIF">
                             <div class="card-body">
-                                <h5 class="card-title">Sebagai Ketua Himpunan Mahasiswa Informatika</h5>
-                                <p class="card-text">Membentuk program kerja dan Mengawasi Pelaksanaan Program Kerja.</p>
+                                <h5 class="card-title">Ketua Himpunan Mahasiswa Informatika</h5>
+                                <p class="card-text">Bertanggung jawab dalam pembentukan program kerja strategis dan mengawasi jalannya roda organisasi secara keseluruhan.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="card shadow-sm h-100 hover-card">
-                            <img src="./img/KPPS.jpg" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
+                            <img src="./img/KPPS.jpg" class="card-img-top" alt="Petugas KPPS">
                             <div class="card-body">
                                 <h5 class="card-title">Petugas KPPS Desa</h5>
-                                <p class="card-text">Menyelenggaran Pemungutan dan Perhitungan Suara di TPS Serta mendata pemilih yang berpartisipasi melakukan pencoblosan.</p>
+                                <p class="card-text">Menyelenggarakan proses pemungutan suara dan pendataan partisipasi pemilih di tingkat TPS dengan ketelitian administratif yang tinggi.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="card shadow-sm h-100 hover-card">
-                            <img src="./img/Sipedet.jpg" class="card-img-top" alt="Proyek Dashboard Admin Kafe">
+                            <img src="./img/Sipedet.jpg" class="card-img-top" alt="Petugas Pendataan">
                             <div class="card-body">
-                                <h5 class="card-title">Petugas Pendataan Ekonomi Sosial Desa</h5>
-                                <p class="card-text">Mencatat dan Mengumpulkan data sosial serta ekonomi masyarakat langsung di lapangan menggunakan aplikasi khusus.</p>
+                                <h5 class="card-title">Petugas Pendataan Ekonomi Sosial</h5>
+                                <p class="card-text">Melakukan pengumpulan data primer langsung di lapangan untuk kebutuhan analisis sosial dan ekonomi masyarakat desa.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- SERTIFIKAT & PELATIHAN -->
             <div id="certificates">
                 <h3 class="text-center mb-4" data-aos="fade-right">Sertifikat & Pelatihan</h3>
                 <div class="row justify-content-center">
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="card shadow-sm h-100 hover-card">
-                            <img src="./img/office-lkp.png" class="card-img-top" alt="Sertifikat Web Development">
+                            <img src="./img/office-lkp.png" class="card-img-top" alt="Sertifikat Office">
                             <div class="card-body">
-                                <h5 class="card-title">Sertifikasi Microsoft Office</h5>
-                                <p class="card-text">Dikeluarkan oleh LKP Borju Komputer. Dengan Hasil Capaian adalah Expert Microsoft Word, Excel, dan PowerPoint</p>
+                                <h5 class="card-title">Sertifikasi Microsoft Office Expert</h5>
+                                <p class="card-text">LKP Borju Komputer - Memiliki kompetensi tingkat lanjut dalam pengoperasian Word, Excel, dan PowerPoint.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="card shadow-sm h-100 hover-card">
-                            <img src="./img/Python course.png" class="card-img-top" alt="Sertifikat Laravel">
+                            <img src="./img/Python course.png" class="card-img-top" alt="Sertifikat Python">
                             <div class="card-body">
-                                <h5 class="card-title">Sertifikat Python 101 for Data Science</h5>
-                                <p class="card-text">Dikeluarkan oleh Cognitive Class. Berhasil menyelesaikan dan menerima nilai kelulusan di Pyton 101 untuk ilmu data</p>
+                                <h5 class="card-title">Python 101 for Data Science</h5>
+                                <p class="card-text">Cognitive Class - Menyelesaikan kursus dasar pemrograman Python yang difokuskan pada analisis data.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="card shadow-sm h-100 hover-card">
-                            <img src="./img/TOEFL-BEGINNER_page-0001.jpg" class="card-img-top" alt="Sertifikat Laravel">
+                            <img src="./img/TOEFL-BEGINNER_page-0001.jpg" class="card-img-top" alt="Sertifikat English">
                             <div class="card-body">
-                                <h5 class="card-title">Sertifikat Amikom English Proficiency Test</h5>
-                                <p class="card-text">Dikeluarkan oleh Universitas Amikom Yogyakarta. Dengan Hasil capaian Test adalah Memiliki Level Proficiency : Beginner.</p>
+                                <h5 class="card-title">Amikom English Proficiency Test</h5>
+                                <p class="card-text">Universitas Amikom Yogyakarta - Pengukuran kemampuan bahasa Inggris tingkat dasar secara komprehensif.</p>
                             </div>
                         </div>
                     </div>
@@ -255,9 +258,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Tambahan Script AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="app.js"></script>
 </body>
