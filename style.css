@@ -397,18 +397,48 @@ body.dark-mode .cursor-ghost {
     }
 }
 
-/* --- ANIMASI ROKET MENUKIK DALAM (SEKUENSIAL) --- */
+/* --- ANIMASI ROKET MENUKIK (ANTI-BUNGLON) --- */
+
+/* 1. Pengaturan Warna Roket Terbang untuk Light Mode (Biru) */
+:root {
+    --rocket-color: #0d6efd; 
+    --rocket-glow: drop-shadow(0 5px 15px rgba(13, 110, 253, 0.4));
+}
+
+/* 2. Pengaturan Warna Roket Terbang untuk Dark Mode (Biru Neon) */
+body.dark-mode {
+    --rocket-color: #60a5fa; 
+    --rocket-glow: drop-shadow(0 5px 15px rgba(96, 165, 250, 0.8));
+}
+
 .rocket-simple-dive {
     display: inline-block;
     position: relative; 
-    z-index: 9999; /* Agar tembus dan melayang di atas elemen lain */
+    z-index: 9999; 
     animation: rocketSimpleAnim 1.2s ease-in forwards;
 }
 
 @keyframes rocketSimpleAnim {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    20% { transform: translateY(-40px) rotate(-15deg) scale(1.1); } /* Naik ancang-ancang */
-    40% { transform: translateY(-40px) rotate(140deg) scale(1.1); } /* Putar balik ke bawah */
-    /* Terjun sejauh 1 layar penuh (100vh) menembus batas tombol */
-    100% { transform: translateY(100vh) rotate(140deg) scale(1.5); opacity: 0; } 
+    0% { 
+        transform: translateY(0) rotate(0deg); 
+        opacity: 1; 
+        color: #ffffff; /* Tahan warna putih selama masih di dalam tombol */
+        filter: none;
+    }
+    20% { 
+        transform: translateY(-40px) rotate(-15deg) scale(1.1); 
+        color: var(--rocket-color); /* Roket "menyala" menyesuaikan tema */
+        filter: var(--rocket-glow); /* Mengeluarkan cahaya/bayangan mesin */
+    } 
+    40% { 
+        transform: translateY(-40px) rotate(140deg) scale(1.1); 
+        color: var(--rocket-color); 
+        filter: var(--rocket-glow);
+    } 
+    100% { 
+        transform: translateY(100vh) rotate(140deg) scale(1.5); 
+        opacity: 0; 
+        color: var(--rocket-color); 
+        filter: var(--rocket-glow);
+    } 
 }
