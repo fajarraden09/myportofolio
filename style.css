@@ -355,3 +355,44 @@ body.dark-mode .dark-btn-fix:hover {
     background-color: #3b82f6 !important;
     color: #ffffff !important;
 }
+
+/* --- CUSTOM GHOST TRAIL CURSOR --- */
+
+.cursor-ghost {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(13, 110, 253, 0.3); /* Warna biru muda transparan */
+    border-radius: 50%;
+    pointer-events: none; /* Agar tidak memblokir klik */
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    filter: blur(8px); /* Efek asap/blur */
+    /* Animasi memudar dan mengecil selama 0.5 detik */
+    animation: fadeTrail 0.5s linear forwards; 
+    will-change: transform, opacity;
+}
+
+/* Warna jejak asap menyesuaikan Dark Mode */
+body.dark-mode .cursor-ghost {
+    background-color: rgba(59, 130, 246, 0.4); /* Biru neon terang */
+}
+
+/* Kunci Animasi: Dari nyata menjadi hilang dan mengecil */
+@keyframes fadeTrail {
+    0% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1); 
+    }
+    100% { 
+        opacity: 0; 
+        transform: translate(-50%, -50%) scale(0.2); 
+    }
+}
+
+/* Nonaktifkan efek di HP agar performa tetap lancar */
+@media (max-width: 768px) {
+    .cursor-ghost {
+        display: none !important;
+    }
+}

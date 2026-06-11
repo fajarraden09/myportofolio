@@ -36,7 +36,7 @@ const textsToType = [
     "Full-Stack Web Developer", 
     "Laravel & Vue.js Enthusiast", 
     "GIS Web Developer", 
-    "Tersertifikasi BNSP & Cisco"
+    "Tersertifikasi BNSP, IBM & Cisco"
 ];
 let textIndex = 0;
 let charIndex = 0;
@@ -97,4 +97,34 @@ themeToggleBtn.addEventListener('click', () => {
         iconTheme.classList.replace('fa-sun', 'fa-moon');
         themeToggleBtn.classList.replace('btn-outline-warning', 'btn-outline-light');
     }
+});
+
+// --- 6. GHOST TRAIL CURSOR EFFECT ---
+let lastDrawTime = 0;
+
+document.addEventListener('mousemove', (e) => {
+    // Mencegah error atau bug di layar sentuh (mobile)
+    if (window.innerWidth <= 768) return;
+
+    const now = Date.now();
+    // Membatasi pembuatan elemen baru agar tidak membuat browser lag (sekitar 60 partikel per detik)
+    if (now - lastDrawTime < 16) return; 
+    lastDrawTime = now;
+
+    // 1. Buat elemen div baru (sebagai serpihan jejak)
+    const ghost = document.createElement('div');
+    ghost.classList.add('cursor-ghost');
+    
+    // 2. Tempatkan persis di titik kursor saat itu
+    ghost.style.left = `${e.clientX}px`;
+    ghost.style.top = `${e.clientY}px`;
+    
+    // 3. Masukkan ke dalam HTML (halaman)
+    document.body.appendChild(ghost);
+
+    // 4. Hapus elemen tersebut setelah 500 milidetik (sesuai durasi animasi di CSS)
+    // Jika tidak dihapus, website akan kepenuhan elemen div tak kasat mata
+    setTimeout(() => {
+        ghost.remove();
+    }, 500);
 });
