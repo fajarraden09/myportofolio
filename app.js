@@ -32,7 +32,12 @@ navLinks.forEach(link => {
 });
 
 // 4. Efek Mengetik Otomatis (Typing Effect)
-const textsToType = ["Web Developer", "GIS & IT Sensing Enthusiast", "Laravel Developer", "", "Php"];
+const textsToType = [
+    "Full-Stack Web Developer", 
+    "Laravel & Vue.js Enthusiast", 
+    "GIS Web Developer", 
+    "Tersertifikasi BNSP & Cisco"
+];
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
