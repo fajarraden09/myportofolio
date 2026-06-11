@@ -2,7 +2,8 @@
 
 // 1. Inisialisasi Animate On Scroll (AOS)
 AOS.init({
-    once: true, // Animasi hanya berjalan sekali saat di-scroll
+    once: false, // Animasi hanya berjalan sekali saat di-scroll
+    mirror: true,
     offset: 100 // Jarak (px) sebelum elemen memicu animasi
 });
 
@@ -128,3 +129,30 @@ document.addEventListener('mousemove', (e) => {
         ghost.remove();
     }, 500);
 });
+
+// --- 8. EFEK ROKET TERJUN LALU SCROLL ---
+const btnProyek = document.getElementById('btn-proyek');
+const rocketIcon = document.getElementById('rocket-icon');
+
+if (btnProyek && rocketIcon) {
+    btnProyek.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // 1. Memicu animasi roket terjun bebas
+        rocketIcon.classList.add('rocket-simple-dive');
+        
+        // 2. TUNGGU sampai roket benar-benar menghilang (1.2 detik / 1200ms)
+        setTimeout(() => {
+            // Baru setelah itu layar digulirkan ke bawah
+            const targetSection = document.querySelector('#projects');
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // 3. Bersihkan class animasi 1 detik setelah layar mulai bergulir 
+            // agar roket mereset posisinya tanpa ketahuan pengguna
+            setTimeout(() => {
+                rocketIcon.classList.remove('rocket-simple-dive');
+            }, 1000);
+
+        }, 1200); // <-- Kunci sekuensialnya ada di angka ini
+    });
+}

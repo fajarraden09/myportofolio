@@ -396,3 +396,19 @@ body.dark-mode .cursor-ghost {
         display: none !important;
     }
 }
+
+/* --- ANIMASI ROKET MENUKIK DALAM (SEKUENSIAL) --- */
+.rocket-simple-dive {
+    display: inline-block;
+    position: relative; 
+    z-index: 9999; /* Agar tembus dan melayang di atas elemen lain */
+    animation: rocketSimpleAnim 1.2s ease-in forwards;
+}
+
+@keyframes rocketSimpleAnim {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    20% { transform: translateY(-40px) rotate(-15deg) scale(1.1); } /* Naik ancang-ancang */
+    40% { transform: translateY(-40px) rotate(140deg) scale(1.1); } /* Putar balik ke bawah */
+    /* Terjun sejauh 1 layar penuh (100vh) menembus batas tombol */
+    100% { transform: translateY(100vh) rotate(140deg) scale(1.5); opacity: 0; } 
+}
