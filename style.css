@@ -442,3 +442,23 @@ body.dark-mode {
         filter: var(--rocket-glow);
     } 
 }
+
+/* --- EFEK ZOOM GAMBAR SERTIFIKAT --- */
+.cert-img {
+    cursor: zoom-in; /* Mengubah kursor jadi ikon kaca pembesar */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cert-img:hover {
+    opacity: 0.8;
+}
+
+/* Penyesuaian tombol close modal agar putih saat dark mode/light mode */
+#imageModal .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.8;
+}
+
+#imageModal .btn-close:hover {
+    opacity: 1;
+}

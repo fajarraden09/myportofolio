@@ -156,3 +156,26 @@ if (btnProyek && rocketIcon) {
         }, 1200); // <-- Kunci sekuensialnya ada di angka ini
     });
 }
+
+// --- 9. FITUR ZOOM GAMBAR SERTIFIKAT (MODAL LIGHTBOX) ---
+const certImages = document.querySelectorAll('.cert-img');
+const modalImage = document.getElementById('modalImage');
+let imageModal;
+
+certImages.forEach(img => {
+    img.addEventListener('click', function() {
+        // Inisialisasi modal Bootstrap jika belum ada
+        if (!imageModal) {
+            imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        }
+        
+        // Ambil URL gambar yang diklik
+        const src = this.getAttribute('src');
+        
+        // Ganti URL gambar di dalam modal dengan gambar yang diklik
+        modalImage.setAttribute('src', src);
+        
+        // Tampilkan modal
+        imageModal.show();
+    });
+});
