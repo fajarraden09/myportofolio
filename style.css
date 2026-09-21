@@ -56,6 +56,20 @@ h2.text-center.mb-5 {
     font-size: 1.8rem;
 }
 
+/* --- MENYERAGAMKAN UKURAN & EFEK ZOOM GAMBAR PROYEK --- */
+#projects .card-img-top {
+    height: 350px; 
+    width: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    cursor: zoom-in; /* Mengubah kursor menjadi kaca pembesar */
+    transition: opacity 0.3s ease; /* Transisi halus saat di-hover */
+}
+
+#projects .card-img-top:hover {
+    opacity: 0.8; /* Gambar sedikit meredup/transparan saat disorot mouse */
+}
+
 /* Memperbaiki ukuran foto di bagian 'Tentang Saya' */
 #about .col-md-4 img.img-fluid {
     max-width: 230px; /* Atur lebar maksimal foto */
@@ -443,9 +457,13 @@ body.dark-mode {
     } 
 }
 
-/* --- EFEK ZOOM GAMBAR SERTIFIKAT --- */
+/* --- EFEK & UKURAN SERTIFIKAT --- */
 .cert-img {
-    cursor: zoom-in; /* Mengubah kursor jadi ikon kaca pembesar */
+    height: 220px; /* Memaksa semua gambar memiliki tinggi yang seragam */
+    width: 100%;
+    object-fit: cover; /* Memotong gambar secara proporsional agar tidak gepeng */
+    object-position: top; /* Fokuskan potongan pada bagian atas/judul sertifikat */
+    cursor: zoom-in;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -461,4 +479,14 @@ body.dark-mode {
 
 #imageModal .btn-close:hover {
     opacity: 1;
+}
+
+/* --- STYLE UNTUK LINK JUDUL PROYEK --- */
+.project-link {
+    color: var(--text-color); /* Akan otomatis menyesuaikan dark/light mode */
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #0d6efd; /* Berubah menjadi biru saat disorot mouse */
 }

@@ -35,8 +35,9 @@ navLinks.forEach(link => {
 // 4. Efek Mengetik Otomatis (Typing Effect)
 const textsToType = [
     "Full-Stack Web Developer", 
-    "Laravel & Vue.js Enthusiast", 
-    "GIS Web Developer", 
+    "PHP, JavaScript, Python & SQL",
+    "Laravel, Node.js, CodeIgniter & Yii2",
+    "Vue.js, Nuxt.js, Next.js & Bootstrap",  
     "Tersertifikasi BNSP, IBM & Cisco"
 ];
 let textIndex = 0;
@@ -158,7 +159,7 @@ if (btnProyek && rocketIcon) {
 }
 
 // --- 9. FITUR ZOOM GAMBAR SERTIFIKAT (MODAL LIGHTBOX) ---
-const certImages = document.querySelectorAll('.cert-img');
+const certImages = document.querySelectorAll('.cert-img, #projects .card-img-top');
 const modalImage = document.getElementById('modalImage');
 let imageModal;
 

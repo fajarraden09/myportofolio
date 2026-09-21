@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css"> 
+    <title>Detail Proyek - POS Kasir</title>
+    <link rel="icon" type="image/png" href="../img/fotoku.png">
+    <style>
+        .carousel-img { height: 500px; object-fit: cover; cursor: zoom-in; border-radius: 12px; }
+        .content-box { background-color: var(--card-bg); color: var(--text-color); border-radius: 12px; padding: 30px; }
+        @media (max-width: 768px) { .carousel-img { height: 250px; } .content-box { padding: 20px; } }
+    </style>
+</head>
+<body class="bg-custom-light">
+
+    <div class="container mt-1 mb-4">
+        <a href="../index.html#projects" class="btn btn-outline-secondary shadow-sm rounded-pill px-4">
+            <i class="fa-solid fa-arrow-left me-2"></i> Kembali ke Portofolio
+        </a>
+    </div>
+
+    <div class="container text-center mb-5">
+        <h1 class="fw-bold display-5 mb-3">Website POS Kasir Kafe</h1>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <span class="badge bg-primary fs-6"><i class="fa-solid fa-mug-hot"></i> Freelance Sugriwa Subali Cafe</span>
+            <span class="badge bg-success fs-6">Laravel, MySQL, Foonte</span>
+        </div>
+        <a href="https://github.com/fajarraden09/kafeku" target="_blank" class="btn btn-dark mt-4 shadow-sm px-4 rounded-pill">
+            <i class="fa-brands fa-github me-2"></i> Lihat Repository GitHub
+        </a>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div id="projectCarousel" class="carousel slide shadow-lg rounded-4 overflow-hidden" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../img/LOGIN_SS.png" class="d-block w-100 carousel-img zoomable" alt="Tampilan Kasir">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../img/Kafe_admin.png" class="d-block w-100 carousel-img zoomable" alt="Tampilan Dashboard Laporan">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="content-box shadow-sm custom-justify">
+                    <h3 class="fw-bold border-bottom pb-2 mb-4">Latar Belakang & Penjelasan Proyek</h3>
+                    <p>Aplikasi *Point of Sales* (POS) berbasis website ini dirancang khusus untuk memenuhi kebutuhan bisnis *Food & Beverage* di Sugriwa Subali Cafe.</p>
+                    <h5 class="fw-bold mt-4 text-danger">Tantangan yang Dihadapi</h5>
+                    <p>Kafe membutuhkan sistem terpusat untuk melacak inventaris bahan baku, mempercepat antrean kasir, dan memantau pemasukan transaksi harian secara *real-time* yang dapat diakses dari mana saja.</p>
+                    <h5 class="fw-bold mt-4 text-warning">Solusi Teknis</h5>
+                    <ul>
+                        <li>Merancang arsitektur database relasional (MySQL) yang solid untuk mencatat arus masuk keluar barang.</li>
+                        <li>Mengembangkan RESTful API di sisi backend (Laravel) untuk kelancaran manajemen produk dan autentikasi berlapis.</li>
+                        <li>Integrasi notifikasi laporan dengan API Fonnte.</li>
+                    </ul>
+                    <h5 class="fw-bold mt-4 text-success">Hasil & Dampak</h5>
+                    <p>Sistem ini berhasil di-deploy penuh ke *cloud* (Hostinger). Pendataan kasir dan pelaporan stok menjadi jauh lebih efisien, terstruktur, dan memperkecil kemungkinan *human error*.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Lightbox -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center pt-0">
+                    <img src="" id="modalImage" class="img-fluid rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.zoomable').forEach(img => {
+            img.addEventListener('click', function() {
+                if (!window.imageModal) window.imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+                document.getElementById('modalImage').src = this.src;
+                window.imageModal.show();
+            });
+        });
+    </script>
+</body>
+</html>
